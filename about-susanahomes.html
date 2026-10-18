@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Susana Homes | Right Steps Inc.</title>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        :root {
+            --navy: #0d1b2a;
+            --gold: #d4a373;
+            --cream: #fff8ef;
+            --white: #ffffff;
+            --text: #444;
+        }
+
+        /* NAVIGATION */
+
+        .navbar {
+            background: var(--navy);
+            color: var(--white);
+            padding: 15px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            color: var(--gold);
+            font-size: 30px;
+        }
+
+        .logo h2 {
+            font-size: 21px;
+            line-height: 1.2;
+        }
+
+        .logo small {
+            display: block;
+            font-size: 11px;
+            font-weight: normal;
+            color: #ddd;
+            margin-top: 4px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-links .contact-btn {
+            background: var(--gold);
+            color: var(--navy);
+            padding: 9px 16px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .nav-links .contact-btn:hover {
+            background: #fff;
+            color: var(--navy);
+        }
+
+        /* HERO SECTION */
+
+        .hero {
+            min-height: 570px;
+            background:
+                linear-gradient(
+                    rgba(13, 27, 42, 0.78),
+                    rgba(13, 27, 42, 0.68)
+                ),
+                url("images/susana-homes.jpg");
+
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 8%;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero-label {
+            display: inline-block;
+            color: var(--gold);
+            border: 1px solid var(--gold);
+            padding: 7px 18px;
+            border-radius: 30px;
+            font-size: 13px;
+            letter-spacing: 1px;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 6vw, 65px);
+            line-height: 1.15;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: #f1f1f1;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 25px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        .btn-primary:hover {
+            background: white;
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--navy);
+        }
+
+        /* GENERAL SECTIONS */
+
+        section {
+            padding: 75px 8%;
+            scroll-margin-top: 85px;
+        }
+
+        .section-heading {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 45px;
+        }
+
+        .section-heading .subtitle {
+            color: #a66b32;
+            text-transform: uppercase;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .section-heading h2 {
+            color: var(--navy);
+            font-size: clamp(28px, 4vw, 40px);
+            line-height: 1.25;
+            margin: 12px 0;
+        }
+
+        .section-heading p {
+            color: #666;
+        }
+
+        /* ABOUT SECTION */
+
+        .about-section {
+            background: white;
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 50px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .about-image {
+            min-height: 390px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #eee;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 390px;
+            object-fit: cover;
+        }
+
+        .about-text h2 {
+            color: var(--navy);
+            font-size: 34px;
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 16px;
+            color: var(--text);
+        }
+
+        .highlight {
+            background: var(--cream);
+            border-left: 4px solid var(--gold);
+            padding: 18px;
+            margin-top: 22px;
+            border-radius: 5px;
+        }
+
+        .highlight strong {
+            color: var(--navy);
+        }
+
+        /* MISSION AND VISION */
+
+        .mission-section {
+            background: var(--cream);
+        }
+
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .mission-card {
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+            border-bottom: 4px solid var(--gold);
+            transition: 0.3s;
+        }
+
+        .mission-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .mission-card i {
+            font-size: 35px;
+            color: #b47b42;
+            margin-bottom: 18px;
+        }
+
+        .mission-card h3 {
+            color: var(--navy);
+            font-size: 23px;
+            margin-bottom: 12px;
+        }
+
+        /* WHAT WE DO */
+
+        .activities-section {
+            background: white;
+        }
+
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .activity-card {
+            padding: 30px 25px;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            background: #fff;
+            transition: 0.3s;
+        }
+
+        .activity-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+        }
+
+        .activity-card .icon {
+            width: 65px;
+            height: 65px;
+            background: var(--cream);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .activity-card i {
+            font-size: 28px;
+            color: #a66b32;
+        }
+
+        .activity-card h3 {
+            color: var(--navy);
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .activity-card p {
+            color: #666;
+            font-size: 15px;
+        }
+
+        /* OUR HISTORY */
+
+        .history-section {
+            background: var(--navy);
+            color: white;
+            text-align: center;
+        }
+
+        .history-section .section-heading h2 {
+            color: white;
+        }
+
+        .history-section .section-heading p {
+            color: #ddd;
+        }
+
+        .history-content {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .history-content p {
+            margin-bottom: 18px;
+            color: #eee;
+        }
+
+        .history-note {
+            display: inline-block;
+            padding: 12px 22px;
+            border: 1px solid var(--gold);
+            border-radius: 5px;
+            color: var(--gold);
+            margin-top: 15px;
+        }
+
+        /* GALLERY */
+
+        .gallery-section {
+            background: #f8f9fa;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .gallery-item {
+            height: 260px;
+            overflow: hidden;
+            border-radius: 10px;
+            background: #e9e9e9;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.07);
+        }
+
+        /* CONTACT SECTION */
+
+        .contact-section {
+            background: white;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .contact-info h3,
+        .contact-form h3 {
+            font-size: 25px;
+            color: var(--navy);
+            margin-bottom: 18px;
+        }
+
+        .contact-info p {
+            margin-bottom: 22px;
+            color: #666;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+            margin-bottom: 22px;
+        }
+
+        .contact-item i {
+            color: #a66b32;
+            font-size: 21px;
+            margin-top: 4px;
+        }
+
+        .contact-item strong {
+            color: var(--navy);
+            display: block;
+        }
+
+        .contact-form {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .contact-form label {
+            display: block;
+            margin: 12px 0 5px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font: inherit;
+            background: white;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .contact-form button {
+            margin-top: 18px;
+            border: none;
+            cursor: pointer;
+            font: inherit;
+        }
+
+        .form-note {
+            font-size: 12px;
+            color: #777;
+            margin-top: 12px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #08131e;
+            color: white;
+            padding: 40px 8% 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .footer-brand {
+            max-width: 400px;
+        }
+
+        .footer-brand h3 {
+            font-size: 23px;
+            color: var(--gold);
+            margin-bottom: 12px;
+        }
+
+        .footer-brand p {
+            color: #ccc;
+            font-size: 14px;
+        }
+
+        .footer-links h4 {
+            margin-bottom: 12px;
+            color: var(--gold);
+        }
+
+        .footer-links a {
+            display: block;
+            color: #ddd;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid #263442;
+            margin-top: 30px;
+            padding-top: 20px;
+            color: #bbb;
+            font-size: 13px;
+        }
+
+        /* MOBILE RESPONSIVENESS */
+
+        @media (max-width: 900px) {
+            .navbar {
+                justify-content: center;
+            }
+
+            .nav-links {
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .about-container,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .activities-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            section {
+                padding: 55px 6%;
+            }
+
+            .hero {
+                min-height: 500px;
+                padding: 60px 6%;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .logo h2 {
+                font-size: 19px;
+            }
+
+            .nav-links {
+                gap: 12px;
+            }
+
+            .nav-links a {
+                font-size: 13px;
+            }
+
+            .mission-grid,
+            .activities-grid,
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-text h2 {
+                font-size: 29px;
+            }
+
+            .gallery-item {
+                height: 240px;
+            }
+
+            .mission-card,
+            .contact-form {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+
+        <a href="index.html" class="logo">
+            <i class="fa-solid fa-house-chimney-user"></i>
+            <div>
+                <h2>Susana Homes</h2>
+                <small>Under Right Steps Inc.</small>
+            </div>
+        </a>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#mission">Our Mission</a>
+            <a href="#activities">What We Do</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact" class="contact-btn">Contact Us</a>
+        </div>
+
+    </nav>
+
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+
+        <div class="hero-content">
+
+            <span class="hero-label">
+                A Home of Love, Hope and Care
+            </span>
+
+            <h1>
+                Welcome to <span>Susana Homes</span>
+            </h1>
+
+            <p>
+                A home under Right Steps Inc. dedicated to providing
+                care, protection, hope and a brighter future for
+                vulnerable children.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#about" class="btn btn-primary">
+                    Discover Our Story
+                </a>
+
+                <a href="#contact" class="btn btn-outline">
+                    Get in Touch
+                </a>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ABOUT SECTION -->
+    <section class="about-section" id="about">
+
+        <div class="about-container">
+
+            <div class="about-image">
+                <!-- Replace this image path with your actual picture -->
+                <img
+                    src="images/Susana 2.jpg"
+                    alt="Susana Homes orphanage home"
+                >
+            </div>
+
+            <div class="about-text">
+
+                <span class="section-heading subtitle">
+                    About Susana Homes
+                </span>
+
+                <h2>
+                    A Place Where Every Child Matters
+                </h2>
+
+                <p>
+                    Susana Homes is an orphanage home under Right Steps Inc.,
+                    established to provide a caring and supportive environment
+                    for vulnerable children.
+                </p>
+
+                <p>
+                    We believe that every child deserves love, protection,
+                    dignity, education and the opportunity to grow into
+                    a responsible and confident individual.
+                </p>
+
+                <p>
+                    Through compassionate care and guidance, Susana Homes
+                    seeks to give children a sense of belonging and hope
+                    for a better future.
+                </p>
+
+                <div class="highlight">
+                    <strong>Our commitment:</strong>
+                    To provide a safe, loving and supportive environment
+                    where children can grow, learn and thrive.
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MISSION AND VISION -->
+    <section class="mission-section" id="mission">
+
+        <div class="section-heading">
+
+            <span class="subtitle">What Guides Us</span>
+
+            <h2>Our Mission and Vision</h2>
+
+            <p>
+                We are committed to making a positive difference in the
+                lives of children through love, care, guidance and support.
+            </p>
+
+        </div>
+
+        <div class="mission-grid">
+
+            <div class="mission-card">
+
+                <i class="fa-solid fa-heart"></i>
+
+                <h3>Our Mission</h3>
+
+                <p>
+                    To provide vulnerable children with a safe and caring
+                    environment where they can receive support, develop
+                    their abilities and build a foundation for a better life.
+                </p>
+
+            </div>
+
+            <div class="mission-card">
+
+                <i class="fa-solid fa-seedling"></i>
+
+                <h3>Our Vision</h3>
+
+                <p>
+                    To see every child grow in dignity, confidence,
+                    knowledge and character, with the opportunity to
+                    become a productive and responsible member of society.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- WHAT WE DO -->
+    <section class="activities-section" id="activities">
+
+        <div class="section-heading">
+
+            <span class="subtitle">Our Commitment to Children</span>
+
+            <h2>What We Do at Susana Homes</h2>
+
+            <p>
+                We believe that caring for a child involves more than
+                providing a roof over their head. It means supporting
+                their overall growth and well-being.
+            </p>
+
+        </div>
+
+        <div class="activities-grid">
+
+            <div class="activity-card">
+
+                <div class="icon">
+                    <i class="fa-solid fa-house"></i>
+                </div>
+
+                <h3>Safe Shelter</h3>
+
+                <p>
+                    Providing a safe and supportive home environment where
+                    children can feel protected, welcomed and valued.
+                </p>
+
+            </div>
+
+
+            <div class="activity-card">
+
+                <div class="icon">
+                    <i class="fa-solid fa-utensils"></i>
+                </div>
+
+                <h3>Basic Needs</h3>
+
+                <p>
+                    Supporting children's daily needs, including food,
+                    clothing, personal care and a healthy living environment.
+                </p>
+
+            </div>
+
+
+            <div class="activity-card">
+
+                <div class="icon">
+                    <i class="fa-solid fa-book-open"></i>
+                </div>
+
+                <h3>Education</h3>
+
+                <p>
+                    Encouraging learning and personal development so that
+                    every child has the opportunity to build a brighter future.
+                </p>
+
+            </div>
+
+
+            <div class="activity-card">
+
+                <div class="icon">
+                    <i class="fa-solid fa-hands-holding-child"></i>
+                </div>
+
+                <h3>Love and Care</h3>
+
+                <p>
+                    Creating a caring atmosphere where children receive
+                    encouragement, attention and emotional support.
+                </p>
+
+            </div>
+
+
+            <div class="activity-card">
+
+                <div class="icon">
+                    <i class="fa-solid fa-cross"></i>
+                </div>
+
+                <h3>Spiritual Development</h3>
+
+                <p>
+                    Encouraging good character, moral values and spiritual
+                    growth in accordance with the Christian principles
+                    of Right Steps Inc.
+                </p>
+
+            </div>
+
+
+            <div class="activity-card">
+
+                <div class="icon">
+                    <i class="fa-solid fa-star"></i>
+                </div>
+
+                <h3>Hope for the Future</h3>
+
+                <p>
+                    Helping children develop confidence, discover their
+                    abilities and prepare for meaningful and independent lives.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- OUR HISTORY -->
+    <section class="history-section" id="history">
+
+        <div class="section-heading">
+
+            <span class="subtitle">Our Beginning</span>
+
+            <h2>The Beginning of Right Steps Inc.</h2>
+
+            <p>
+                Susana Homes holds a special place in the story of
+                Right Steps Inc.
+            </p>
+
+        </div>
+
+        <div class="history-content">
+
+            <p>
+                Susana Homes was the first establishment under Right Steps Inc.
+                It represents an important part of the organisation's
+                foundation and its commitment to making a positive difference
+                in people's lives.
+            </p>
+
+            <p>
+                From this beginning, Right Steps Inc. has a story that
+                connects care for vulnerable children with its broader
+                commitment to education, personal development and service.
+            </p>
+
+            <p>
+                Susana Homes remains an important part of this story,
+                representing the value of compassion and the belief that
+                every child deserves the opportunity to experience a
+                better future.
+            </p>
+
+            <div class="history-note">
+                <i class="fa-solid fa-heart"></i>
+                The Beginning of a Greater Vision
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PHOTO GALLERY -->
+    <section class="gallery-section" id="gallery">
+
+        <div class="section-heading">
+
+            <span class="subtitle">Moments at Susana Homes</span>
+
+            <h2>Our Gallery</h2>
+
+            <p>
+                A glimpse into our home, our environment and the moments
+                that make Susana Homes special.
+            </p>
+
+        </div>
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item">
+                <img
+                    src="images/Susana 7.png"
+                    alt="Susana Homes building"
+                    loading="lazy"
+                >
+            </div>
+
+            <div class="gallery-item">
+                <img
+                    src="images/Susana 4.jpg"
+                    alt="Children at Susana Homes"
+                    loading="lazy"
+                >
+            </div>
+
+            <div class="gallery-item">
+                <img
+                    src="images/Susana 5.jpg"
+                    alt="Activities at Susana Homes"
+                    loading="lazy"
+                >
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-section" id="contact">
+
+        <div class="section-heading">
+
+            <span class="subtitle">We Would Love to Hear from You</span>
+
+            <h2>Contact Susana Homes</h2>
+
+            <p>
+                For enquiries, support or further information about
+                Susana Homes, please get in touch with us.
+            </p>
+
+        </div>
+
+        <div class="contact-container">
+
+            <div class="contact-info">
+
+                <h3>Get in Touch</h3>
+
+                <p>
+                    Susana Homes is part of the Right Steps Inc. family.
+                    Please use the contact details below once they have
+                    been confirmed.
+                </p>
+
+                <div class="contact-item">
+                    <i class="fa-solid fa-building"></i>
+
+                    <div>
+                        <strong>Organisation</strong>
+                        Right Steps Inc.
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    <div>
+                        <strong>Our Location</strong>
+                        <h3>Campus 1</h3>
+                        <span>Umuahala, Obuzor, Ukwa West, Abia State, Nigeria</span>
+                        <h3>Campus 2</h3>
+                        <span>Ukpulor, KM 25 along PH/Aba Expressway, Oyigbo, Rivers State, Nigeria</span>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fa-solid fa-phone"></i>
+
+                    <div>
+                        <strong>Phone Number</strong>
+                        <span>0900-000-0000</span>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <div>
+                        <strong>Email Address</strong>
+                        <span>susanahomes@gmail.com</span>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="contact-form">
+
+                <h3>Send an Enquiry</h3>
+
+                <form action="mailto:" method="post" enctype="text/plain">
+
+                    <label for="name">Your Name</label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="Name"
+                        placeholder="Enter your name"
+                        required
+                    >
+
+                    <label for="email">Your Email</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="Email"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                    <label for="subject">Subject</label>
+                    <input
+                        type="text"
+                        id="subject"
+                        name="Subject"
+                        placeholder="Enter your subject"
+                        required
+                    >
+
+                    <label for="message">Your Message</label>
+                    <textarea
+                        id="message"
+                        name="Message"
+                        placeholder="Write your message here..."
+                        required
+                    ></textarea>
+
+                    <button type="submit" class="btn btn-primary">
+                        Send Enquiry
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+
+                    <p class="form-note">
+                        Note: This form requires a properly configured
+                        email address or a form-processing service to
+                        send enquiries reliably.
+                    </p>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-content">
+
+            <div class="footer-brand">
+
+                <h3>
+                    <i class="fa-solid fa-house-chimney-user"></i>
+                    Susana Homes
+                </h3>
+
+                <p>
+                    The first establishment under Right Steps Inc.,
+                    committed to care, hope and a brighter future
+                    for vulnerable children.
+                </p>
+
+            </div>
+
+            <div class="footer-links">
+
+                <h4>Quick Links</h4>
+
+                <a href="index.html">Right Steps Inc. Home</a>
+                <a href="#about">About Susana Homes</a>
+                <a href="#mission">Our Mission</a>
+                <a href="#activities">What We Do</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#contact">Contact Us</a>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+                &copy; <span id="year"></span> Susana Homes |
+                A part of Right Steps Inc. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+    </script>
+
+</body>
+</html>
+```

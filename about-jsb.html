@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JSB Institute of Biblical Studies | Right Steps Inc.</title>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* GENERAL STYLING */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* NAVIGATION BAR */
+        .navbar {
+            background-color: #0d1b2a;
+            color: white;
+            padding: 18px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 21px;
+            font-weight: bold;
+            color: #d4a373;
+        }
+
+        .logo i {
+            margin-right: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 22px;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: white;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #d4a373;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            min-height: 540px;
+            background:
+                linear-gradient(rgba(7, 20, 35, 0.78),
+                                rgba(7, 20, 35, 0.78)),
+                url("images/WhatsApp\ Image\ 2026-10-09\ at\ 3.22.41\ PM.jpeg");
+
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 80px 20px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .hero-icon {
+            font-size: 55px;
+            color: #d4a373;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 5vw, 55px);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #d4a373;
+        }
+
+        .hero .slogan {
+            font-size: 23px;
+            font-style: italic;
+            color: #f4d6b0;
+            margin-bottom: 18px;
+        }
+
+        .hero p {
+            font-size: 17px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #d4a373;
+            color: #0d1b2a;
+            padding: 13px 25px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin: 6px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: white;
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: white;
+            border: 2px solid #d4a373;
+        }
+
+        .btn-outline:hover {
+            color: #0d1b2a;
+        }
+
+        /* GENERAL SECTION STYLING */
+        section {
+            padding: 75px 0;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-heading h2 {
+            color: #0d1b2a;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .section-heading p {
+            max-width: 700px;
+            margin: auto;
+            color: #666;
+        }
+
+        .heading-line {
+            width: 70px;
+            height: 4px;
+            background-color: #d4a373;
+            margin: 15px auto;
+            border-radius: 5px;
+        }
+
+        /* ABOUT SECTION */
+        .about-section {
+            background-color: white;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 45px;
+            align-items: center;
+        }
+
+        .about-image {
+            min-height: 350px;
+            background:
+                url("images/WhatsApp Image 2026-10-09 at 3.22.41 PM.jpeg")
+                center/cover;
+            border-radius: 10px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .about-text h2 {
+            color: #0d1b2a;
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .about-text h3 {
+            color: #a66a35;
+            margin: 20px 0 8px;
+        }
+
+        .about-text p {
+            margin-bottom: 14px;
+        }
+
+        /* MISSION AND VISION */
+        .mission-section {
+            background-color: #eef1f4;
+        }
+
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .mission-card {
+            background-color: white;
+            padding: 35px;
+            border-radius: 10px;
+            text-align: center;
+            border-bottom: 4px solid #d4a373;
+            transition: 0.3s;
+        }
+
+        .mission-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .mission-card i {
+            font-size: 40px;
+            color: #b57b45;
+            margin-bottom: 18px;
+        }
+
+        .mission-card h3 {
+            color: #0d1b2a;
+            margin-bottom: 12px;
+        }
+
+        /* TRAINING SECTION */
+        .training-section {
+            background-color: white;
+        }
+
+        .training-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .training-card {
+            background-color: #f8f9fa;
+            padding: 30px 25px;
+            text-align: center;
+            border-radius: 10px;
+            border: 1px solid #e5e5e5;
+            transition: 0.3s;
+        }
+
+        .training-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border-color: #d4a373;
+        }
+
+        .training-card i {
+            font-size: 38px;
+            color: #b57b45;
+            margin-bottom: 18px;
+        }
+
+        .training-card h3 {
+            color: #0d1b2a;
+            margin-bottom: 12px;
+            font-size: 20px;
+        }
+
+        /* SCRIPTURE SECTION */
+        .scripture-section {
+            background-color: #0d1b2a;
+            color: white;
+            text-align: center;
+            padding: 65px 20px;
+        }
+
+        .scripture-section i {
+            color: #d4a373;
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .scripture-section blockquote {
+            font-size: 25px;
+            font-style: italic;
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .scripture-section p {
+            margin-top: 15px;
+            color: #d4a373;
+            font-weight: bold;
+        }
+
+        /* WHY CHOOSE US */
+        .choose-section {
+            background-color: #f8f9fa;
+        }
+
+        .choose-list {
+            max-width: 850px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .choose-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            background: white;
+            padding: 22px;
+            border-radius: 8px;
+        }
+
+        .choose-item i {
+            color: #b57b45;
+            font-size: 24px;
+            margin-top: 4px;
+        }
+
+        .choose-item h3 {
+            color: #0d1b2a;
+            margin-bottom: 5px;
+        }
+
+        /* CONTACT SECTION */
+        .contact-section {
+            background-color: white;
+            text-align: center;
+        }
+
+        .contact-box {
+            background-color: #0d1b2a;
+            color: white;
+            padding: 45px 25px;
+            border-radius: 12px;
+        }
+
+        .contact-box h2 {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .contact-box p {
+            max-width: 650px;
+            margin: 0 auto 20px;
+        }
+
+        .contact-details {
+            margin: 20px 0;
+        }
+
+        .contact-details p {
+            margin-bottom: 10px;
+        }
+
+        .contact-details i {
+            color: #d4a373;
+            margin-right: 8px;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #07111d;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+        }
+
+        footer p {
+            margin: 6px 0;
+            font-size: 14px;
+        }
+
+        footer .footer-slogan {
+            color: #d4a373;
+            font-style: italic;
+        }
+
+        .back-to-top {
+            display: inline-block;
+            margin-top: 12px;
+            color: #d4a373;
+        }
+
+        /* MOBILE RESPONSIVENESS */
+        @media (max-width: 850px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                min-height: 300px;
+            }
+
+            .training-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .nav-content {
+                justify-content: center;
+            }
+
+            .nav-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .nav-links {
+                gap: 12px;
+            }
+
+            .nav-links a {
+                font-size: 13px;
+            }
+
+            .hero {
+                min-height: 480px;
+            }
+
+            .hero .slogan {
+                font-size: 20px;
+            }
+
+            .mission-grid,
+            .training-grid,
+            .choose-list {
+                grid-template-columns: 1fr;
+            }
+
+            .section-heading h2 {
+                font-size: 27px;
+            }
+
+            section {
+                padding: 55px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <header class="navbar" id="top">
+        <div class="container nav-content">
+
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-book-bible"></i>
+                JSB Institute
+            </a>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#about">About JSB</a></li>
+                    <li><a href="#mission">Mission & Vision</a></li>
+                    <li><a href="#training">Our Training</a></li>
+                    <li><a href="jsb-contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="hero-icon">
+                <i class="fa-solid fa-book-open"></i>
+            </div>
+
+            <h1>
+                JSB Institute of<br>
+                <span>Biblical Studies</span>
+            </h1>
+
+            <div class="slogan">
+                "A Christian Living Centre"
+            </div>
+
+            <p>
+                Equipping men and women with biblical knowledge,
+                spiritual understanding, and the foundation needed
+                to serve God faithfully and impact lives through
+                the Gospel of Jesus Christ.
+            </p>
+
+            <a href="#about" class="btn">
+                Discover JSB
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <a href="#contact" class="btn btn-outline">
+                Get in Touch
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT JSB -->
+    <section class="about-section" id="about">
+
+        <div class="container">
+
+            <div class="section-heading">
+                <h2>About JSB Institute</h2>
+                <div class="heading-line"></div>
+                <p>
+                    A place for biblical learning, spiritual development,
+                    and preparation for Christian ministry.
+                </p>
+            </div>
+
+            <div class="about-grid">
+
+                <div class="about-image"
+                     role="img"
+                     aria-label="Bible study setting">
+                </div>
+
+                <div class="about-text">
+
+                    <h2>Training Ministers. Transforming Lives.</h2>
+
+                    <p>
+                        The JSB Institute of Biblical Studies and
+                        Christian Living Centre is a Bible college
+                        dedicated to training and equipping ministers
+                        of God for effective Christian service.
+                    </p>
+
+                    <p>
+                        The Institute focuses on helping students
+                        understand the Word of God, strengthen their
+                        faith in Jesus Christ, and develop the character
+                        and discipline required for ministry.
+                    </p>
+
+                    <p>
+                        Through biblical instruction and spiritual
+                        development, students are encouraged to become
+                        responsible servants of God who can teach the
+                        Scriptures, support their communities, and share
+                        the message of the Gospel.
+                    </p>
+
+                    <h3>
+                        <i class="fa-solid fa-cross"></i>
+                        Our Slogan
+                    </h3>
+
+                    <p>
+                        <strong>"A Christian Living Centre"</strong>
+                        expresses the Institute's commitment to
+                        biblical understanding and a Christ-centred life.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MISSION AND VISION -->
+    <section class="mission-section" id="mission">
+
+        <div class="container">
+
+            <div class="section-heading">
+                <h2>Our Mission & Vision</h2>
+                <div class="heading-line"></div>
+                <p>
+                    Building a strong foundation for Christian faith
+                    and effective ministry.
+                </p>
+            </div>
+
+            <div class="mission-grid">
+
+                <div class="mission-card">
+
+                    <i class="fa-solid fa-bullseye"></i>
+
+                    <h3>Our Mission</h3>
+
+                    <p>
+                        To equip men and women with sound biblical
+                        knowledge, Christian values, and the spiritual
+                        preparation necessary for faithful service to God
+                        and meaningful service to humanity.
+                    </p>
+
+                </div>
+
+                <div class="mission-card">
+
+                    <i class="fa-solid fa-eye"></i>
+
+                    <h3>Our Vision</h3>
+
+                    <p>
+                        To develop spiritually mature and biblically
+                        grounded ministers who will share the Gospel,
+                        demonstrate Christ-like character, and positively
+                        influence their churches and communities.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- OUR TRAINING -->
+    <section class="training-section" id="training">
+
+        <div class="container">
+
+            <div class="section-heading">
+                <h2>Our Areas of Training</h2>
+                <div class="heading-line"></div>
+                <p>
+                    Preparing students for a deeper understanding
+                    of Scripture and a life of Christian service.
+                </p>
+            </div>
+
+            <div class="training-grid">
+
+                <div class="training-card">
+
+                    <i class="fa-solid fa-book-bible"></i>
+
+                    <h3>Biblical Studies</h3>
+
+                    <p>
+                        Studying the Bible to understand its teachings,
+                        principles, and application to everyday life
+                        and Christian ministry.
+                    </p>
+
+                </div>
+
+                <div class="training-card">
+
+                    <i class="fa-solid fa-church"></i>
+
+                    <h3>Christian Ministry</h3>
+
+                    <p>
+                        Preparing students to serve in Christian
+                        ministry with commitment, humility, and
+                        faithfulness to God's Word.
+                    </p>
+
+                </div>
+
+                <div class="training-card">
+
+                    <i class="fa-solid fa-microphone-lines"></i>
+
+                    <h3>Preaching & Teaching</h3>
+
+                    <p>
+                        Developing the ability to communicate biblical
+                        truths clearly and teach the Scriptures
+                        responsibly.
+                    </p>
+
+                </div>
+
+                <div class="training-card">
+
+                    <i class="fa-solid fa-hands-praying"></i>
+
+                    <h3>Prayer & Spiritual Growth</h3>
+
+                    <p>
+                        Encouraging a deeper relationship with God
+                        through prayer, devotion, and spiritual
+                        discipline.
+                    </p>
+
+                </div>
+
+                <div class="training-card">
+
+                    <i class="fa-solid fa-heart"></i>
+
+                    <h3>Christian Character</h3>
+
+                    <p>
+                        Promoting integrity, love, humility,
+                        discipline, and Christ-like behaviour
+                        in personal life and ministry.
+                    </p>
+
+                </div>
+
+                <div class="training-card">
+
+                    <i class="fa-solid fa-people-group"></i>
+
+                    <h3>Leadership & Service</h3>
+
+                    <p>
+                        Encouraging responsible leadership,
+                        teamwork, and service within the church
+                        and the wider community.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- BIBLE VERSE -->
+    <section class="scripture-section">
+
+        <div class="container">
+
+            <i class="fa-solid fa-book-open"></i>
+
+            <blockquote>
+                "Study to shew thyself approved unto God,
+                a workman that needeth not to be ashamed,
+                rightly dividing the word of truth."
+            </blockquote>
+
+            <p>2 Timothy 2:15 (KJV)</p>
+
+        </div>
+
+    </section>
+
+
+    <!-- WHY JSB -->
+    <section class="choose-section">
+
+        <div class="container">
+
+            <div class="section-heading">
+                <h2>Why Biblical Training Matters</h2>
+                <div class="heading-line"></div>
+                <p>
+                    Christian ministry requires more than enthusiasm.
+                    It requires knowledge, character, commitment,
+                    and a sound understanding of God's Word.
+                </p>
+            </div>
+
+            <div class="choose-list">
+
+                <div class="choose-item">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <div>
+                        <h3>Biblical Foundation</h3>
+                        <p>
+                            Build a stronger understanding of the
+                            Scriptures and their teachings.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="choose-item">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <div>
+                        <h3>Spiritual Development</h3>
+                        <p>
+                            Grow in faith, prayer, and personal
+                            commitment to Christian living.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="choose-item">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <div>
+                        <h3>Preparation for Service</h3>
+                        <p>
+                            Develop knowledge and skills that support
+                            responsible Christian ministry.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="choose-item">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <div>
+                        <h3>Christ-Centred Living</h3>
+                        <p>
+                            Learn to reflect Christian values in
+                            personal conduct and relationships.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-section" id="contact">
+
+        <div class="container">
+
+            <div class="contact-box">
+
+                <h2>Connect With JSB Institute</h2>
+
+                <p>
+                    Are you interested in biblical studies, Christian
+                    growth, or preparing for ministry? Contact us to
+                    learn more about the Institute and its activities.
+                </p>
+
+                <div class="contact-details">
+
+                    <p>
+                        <i class="fa-solid fa-building"></i>
+                        JSB Institute of Biblical Studies and
+                        Christian Living Centre
+                    </p>
+
+                    <!-- Add the official address when available -->
+
+                </div>
+
+                <!-- Replace # with the official contact links -->
+
+                
+                <a href="jsb-contact.html" class="btn">
+    <i class="fa-solid fa-envelope"></i>
+    Contact Us
+</a>
+
+                <a href="index.html" class="btn btn-outline">
+                    <i class="fa-solid fa-house"></i>
+                    Return to Right Steps Inc.
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="container">
+
+            <p>
+                &copy; <span id="year"></span>
+                JSB Institute of Biblical Studies.
+                All Rights Reserved.
+            </p>
+
+            <p class="footer-slogan">
+                "A Christian Living Centre"
+            </p>
+
+            <p>
+                Part of the Right Steps Inc. family.
+            </p>
+
+            
+
+        </div>
+
+    </footer>
+
+
+    <script>
+        // Automatically display the current year
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+    </script>
+
+</body>
+</html>
+```

@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us | JSB Institute</title>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* NAVIGATION */
+        .navbar {
+            background-color: #0d1b2a;
+            color: white;
+            padding: 18px 5%;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            color: #d4a373;
+            font-size: 21px;
+            font-weight: bold;
+        }
+
+        .logo i {
+            margin-right: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: white;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #d4a373;
+        }
+
+        /* PAGE HEADER */
+        .page-header {
+            background: linear-gradient(
+                rgba(13, 27, 42, 0.88),
+                rgba(13, 27, 42, 0.88)
+            ),
+            url("https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 85px 20px;
+        }
+
+        .page-header i {
+            color: #d4a373;
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .page-header h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .page-header p {
+            font-size: 18px;
+        }
+
+        .slogan {
+            color: #d4a373;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        /* MAIN CONTENT */
+        .container {
+            width: 90%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        .contact-section {
+            padding: 65px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            color: #0d1b2a;
+            font-size: 32px;
+        }
+
+        .section-title p {
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .heading-line {
+            width: 65px;
+            height: 4px;
+            background-color: #d4a373;
+            margin: 15px auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 30px;
+            align-items: start;
+        }
+
+        /* CONTACT INFORMATION */
+        .contact-info {
+            background-color: #0d1b2a;
+            color: white;
+            padding: 35px;
+            border-radius: 10px;
+        }
+
+        .contact-info h2 {
+            color: #d4a373;
+            margin-bottom: 15px;
+        }
+
+        .contact-info > p {
+            margin-bottom: 25px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .info-item i {
+            color: #d4a373;
+            font-size: 23px;
+            margin-top: 5px;
+        }
+
+        .info-item h3 {
+            font-size: 17px;
+            margin-bottom: 4px;
+        }
+
+        .info-item p {
+            color: #e0e0e0;
+            overflow-wrap: anywhere;
+        }
+
+        .info-item a {
+            color: #f4c995;
+        }
+
+        .info-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* ENQUIRY FORM */
+        .contact-form {
+            background-color: white;
+            padding: 35px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+        }
+
+        .contact-form h2 {
+            color: #0d1b2a;
+            margin-bottom: 10px;
+        }
+
+        .contact-form > p {
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 7px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #d4a373;
+            box-shadow: 0 0 5px rgba(212, 163, 115, 0.4);
+        }
+
+        .form-group textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 24px;
+            border: none;
+            border-radius: 5px;
+            background-color: #d4a373;
+            color: #0d1b2a;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #bd8958;
+            transform: translateY(-2px);
+        }
+
+        .btn i {
+            margin-right: 7px;
+        }
+
+        .form-note {
+            font-size: 13px;
+            color: #666;
+            margin-top: 15px;
+        }
+
+        /* RETURN BUTTON */
+        .return-section {
+            text-align: center;
+            padding: 0 20px 65px;
+        }
+
+        .return-btn {
+            display: inline-block;
+            background-color: #0d1b2a;
+            color: white;
+            padding: 13px 25px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .return-btn:hover {
+            background-color: #243d56;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #07111d;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+        }
+
+        footer p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        footer .slogan {
+            color: #d4a373;
+        }
+
+        /* MOBILE RESPONSIVENESS */
+        @media (max-width: 800px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-container {
+                justify-content: center;
+            }
+
+            .nav-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .page-header h1 {
+                font-size: 32px;
+            }
+
+            .contact-info,
+            .contact-form {
+                padding: 25px 20px;
+            }
+
+            .nav-links {
+                gap: 12px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <header class="navbar">
+        <div class="nav-container">
+
+            <a href="jsb-institute.html" class="logo">
+                <i class="fa-solid fa-book-bible"></i>
+                JSB Institute
+            </a>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about-jsb.html">About JSB</a></li>
+                    <li><a href="about-jsb.html">Training</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+
+        <i class="fa-solid fa-envelope-open-text"></i>
+
+        <h1>Contact Us</h1>
+
+        <p>
+            We would love to hear from you.
+            Get in touch with the JSB Institute of Biblical Studies.
+        </p>
+
+        <div class="slogan">
+            "A Christian Living Centre"
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-section" id="contact">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Get in Touch With Us</h2>
+
+                <div class="heading-line"></div>
+
+                <p>
+                    Do you have questions about biblical studies,
+                    ministry training, or admission?
+                    We welcome your enquiries.
+                </p>
+
+            </div>
+
+
+            <div class="contact-grid">
+
+                <!-- CONTACT INFORMATION -->
+                <div class="contact-info">
+
+                    <h2>Contact Information</h2>
+
+                    <p>
+                        Connect with us to learn more about the Institute,
+                        our activities, and opportunities for biblical study.
+                    </p>
+
+
+                    <div class="info-item">
+
+                        <i class="fa-solid fa-building"></i>
+
+                        <div>
+                            <h3>Institution</h3>
+
+                            <p>
+                                JSB Institute of Biblical Studies
+                                and Christian Living Centre
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <i class="fa-solid fa-phone"></i>
+
+                        <div>
+                            <h3>Phone Number</h3>
+
+                            <!-- Replace with the official phone number -->
+
+                            <p>
+                                09000000000
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <i class="fa-brands fa-whatsapp"></i>
+
+                        <div>
+                            <h3>WhatsApp</h3>
+
+                            <!-- Replace with the official WhatsApp link -->
+
+                            <p>
+                                08000000000
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        <div>
+                            <h3>Email Address</h3>
+
+                            <!-- Replace with the official email address -->
+
+                            <p>
+                                www.jsbofficial@gmail.com
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                        <div>
+                            <h3>Our Location</h3>
+
+                            <!-- Replace with the actual address -->
+
+                            <p>
+                                Umuahala, Obuzor, Ukwa West L.G.A. Abia State
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ENQUIRY FORM -->
+                <div class="contact-form">
+
+                    <h2>Send Us an Enquiry</h2>
+
+                    <p>
+                        Complete the form below to prepare your enquiry
+                        for sending through WhatsApp.
+                    </p>
+
+                    <form id="enquiryForm">
+
+                        <div class="form-group">
+
+                            <label for="name">Full Name *</label>
+
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Enter your full name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="email">Email Address</label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Enter your email address"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="phone">Phone Number</label>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                placeholder="Enter your phone number"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="subject">What Is Your Enquiry About? *</label>
+
+                            <select id="subject" name="subject" required>
+
+                                <option value="">Select an option</option>
+
+                                <option value="Admission Enquiry">
+                                    Admission Enquiry
+                                </option>
+
+                                <option value="Biblical Studies">
+                                    Biblical Studies
+                                </option>
+
+                                <option value="Ministry Training">
+                                    Ministry Training
+                                </option>
+
+                                <option value="General Enquiry">
+                                    General Enquiry
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="message">Your Message *</label>
+
+                            <textarea
+                                id="message"
+                                name="message"
+                                placeholder="Write your message here..."
+                                required
+                            ></textarea>
+
+                        </div>
+
+
+                        <button type="submit" class="btn">
+
+                            <i class="fa-brands fa-whatsapp"></i>
+                            Send Enquiry via WhatsApp
+
+                        </button>
+
+                        <p class="form-note">
+                            Your enquiry will open in WhatsApp for you
+                            to review and send. The form does not send
+                            or store your information by itself.
+                        </p>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- RETURN TO JSB PAGE -->
+    <section class="return-section">
+
+        <a href="about-jsb.html" class="return-btn">
+            <i class="fa-solid fa-arrow-left"></i>
+            Return to JSB Institute
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            &copy; <span id="year"></span>
+            JSB Institute of Biblical Studies.
+            All Rights Reserved.
+        </p>
+
+        <p class="slogan">
+            "A Christian Living Centre"
+        </p>
+
+        <p>Part of the Right Steps Inc. family.</p>
+
+    </footer>
+
+
+    <!-- PAGE SCRIPTS -->
+    <script>
+
+        // Automatically update the year
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+
+        // Prepare an enquiry and open WhatsApp
+        document.getElementById("enquiryForm").addEventListener(
+            "submit",
+            function(event) {
+
+                event.preventDefault();
+
+                /*
+                  IMPORTANT:
+                  Replace the number below with the Institute's
+                  real WhatsApp number, including the country code
+                  but without +, spaces, or dashes.
+
+                  Example format for Nigeria: 2348012345678
+                  This is only an example, not the Institute's number.
+                */
+
+                const whatsappNumber = "2348012345678";
+
+                const name =
+                    document.getElementById("name").value.trim();
+
+                const email =
+                    document.getElementById("email").value.trim();
+
+                const phone =
+                    document.getElementById("phone").value.trim();
+
+                const subject =
+                    document.getElementById("subject").value;
+
+                const message =
+                    document.getElementById("message").value.trim();
+
+
+                const enquiry =
+                    "JSB Institute of Biblical Studies - Enquiry\n\n" +
+                    "Full Name: " + name + "\n" +
+                    "Email: " + (email || "Not provided") + "\n" +
+                    "Phone: " + (phone || "Not provided") + "\n" +
+                    "Enquiry Type: " + subject + "\n" +
+                    "Message: " + message;
+
+
+                if (
+                    whatsappNumber === "2348012345678" ||
+                    !/^\d{7,15}$/.test(whatsappNumber)
+                ) {
+
+                    alert(
+                        "Please replace the example WhatsApp number " +
+                        "in the JavaScript code with the Institute's " +
+                        "real WhatsApp number before using this form."
+                    );
+
+                    return;
+                }
+
+
+                const whatsappURL =
+                    "https://wa.me/" +
+                    whatsappNumber +
+                    "?text=" +
+                    encodeURIComponent(enquiry);
+
+
+                window.open(whatsappURL, "_blank");
+
+            }
+        );
+
+    </script>
+
+</body>
+</html>
+```

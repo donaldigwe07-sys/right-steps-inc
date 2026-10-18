@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>About RSIMT - Right Steps Inc.</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f8f9fa;
+      color: #333;
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ================= NAVBAR ================= */
+
+    .navbar {
+      background-color: #0d1b2a;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 8%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #d4a373;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: white;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover,
+    .nav-links .active {
+      color: #d4a373;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero {
+      background:
+        linear-gradient(rgba(13, 27, 42, 0.85), rgba(13, 27, 42, 0.85)),
+        url("c:\Users\Student\Downloads\WhatsApp Image 2026-10-09 at 3.22.41 PM.jpegimages/ChatGPT Image Oct 8, 2026, 01_48_47 PM.png");
+
+      background-size: cover;
+      background-position: center;
+
+      min-height: 420px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      padding: 40px 20px;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .hero h1 {
+      font-size: 50px;
+      margin-bottom: 15px;
+      color: #d4a373;
+    }
+
+    .hero p {
+      font-size: 19px;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    /* ================= GENERAL SECTION ================= */
+
+    section {
+      padding: 70px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      color: #0d1b2a;
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #666;
+    }
+
+    /* ================= ABOUT ================= */
+
+    .about-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about-image img {
+      width: 100%;
+      border-radius: 12px;
+      display: block;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .about-text h2 {
+      color: #0d1b2a;
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .about-text p {
+      margin-bottom: 15px;
+      color: #555;
+    }
+
+    /* ================= MISSION & VISION ================= */
+
+    .mission-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+
+    .mission-card {
+      background: white;
+      padding: 35px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+      transition: 0.3s;
+    }
+
+    .mission-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .mission-card i {
+      font-size: 45px;
+      color: #d4a373;
+      margin-bottom: 20px;
+    }
+
+    .mission-card h3 {
+      color: #0d1b2a;
+      font-size: 25px;
+      margin-bottom: 15px;
+    }
+
+    .mission-card p {
+      color: #555;
+    }
+
+    /* ================= VALUES ================= */
+
+    .values {
+      background-color: #0d1b2a;
+      color: white;
+    }
+
+    .values .section-title h2 {
+      color: white;
+    }
+
+    .values .section-title p {
+      color: #ddd;
+    }
+
+    .values-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+    }
+
+    .value-card {
+      text-align: center;
+      padding: 25px 15px;
+    }
+
+    .value-card i {
+      font-size: 35px;
+      color: #d4a373;
+      margin-bottom: 15px;
+    }
+
+    .value-card h3 {
+      margin-bottom: 10px;
+    }
+
+    .value-card p {
+      color: #ddd;
+      font-size: 14px;
+    }
+
+    /* ================= PROGRAMS ================= */
+
+    .programs-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .program-card {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      border-top: 4px solid #d4a373;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .program-card i {
+      color: #d4a373;
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    .program-card h3 {
+      color: #0d1b2a;
+      margin-bottom: 10px;
+    }
+
+    .program-card p {
+      color: #666;
+    }
+
+    /* ================= CTA ================= */
+
+    .cta {
+      background-color: #d4a373;
+      text-align: center;
+      color: #0d1b2a;
+    }
+
+    .cta h2 {
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      max-width: 700px;
+      margin: 0 auto 25px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background-color: #0d1b2a;
+      color: white;
+      padding: 13px 28px;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .cta-button:hover {
+      background-color: #1b344d;
+      transform: translateY(-2px);
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      background-color: #0d1b2a;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    footer p {
+      color: #ccc;
+      font-size: 14px;
+    }
+
+    .social-icons {
+      margin-top: 15px;
+    }
+
+    .social-icons a {
+      margin: 0 8px;
+      color: #d4a373;
+      font-size: 20px;
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media (max-width: 900px) {
+
+      .about-container,
+      .mission-container {
+        grid-template-columns: 1fr;
+      }
+
+      .values-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .programs-container {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .navbar {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .values-container {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      section {
+        padding: 50px 6%;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+
+  <nav class="navbar">
+
+    <div class="logo">
+      Right Steps Inc.
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#" class="active">About RSIMT</a></li>
+    </ul>
+
+  </nav>
+
+
+  <!-- ================= HERO ================= -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <h1>About RSIMT</h1>
+
+      <p>
+        Right Steps Institute of Management and Technology
+        is an educational institution under Right Steps Inc.,
+        committed to providing quality education, practical skills,
+        and character development for a better future.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= ABOUT RSIMT ================= -->
+
+  <section>
+
+    <div class="about-container">
+
+      <div class="about-image">
+
+        <!-- Replace rsimt.jpg with your actual RSIMT picture -->
+        <img src="images/ChatGPT Image Oct 8, 2026, 01_48_47 PM.png"
+             alt="Right Steps Institute of Management and Technology">
+
+      </div>
+
+
+      <div class="about-text">
+
+        <h2>Right Steps Institute of Management and Technology</h2>
+
+        <p>
+          Right Steps Institute of Management and Technology (RSIMT)
+          is an educational institute established under
+          <strong>Right Steps Inc.</strong> with the aim of providing
+          students with quality education, professional knowledge,
+          practical skills, and strong moral values.
+        </p>
+
+        <p>
+          RSIMT is committed to preparing students to become
+          knowledgeable, skilled, responsible, and productive
+          members of society. Through education and practical
+          training, the institute seeks to equip students with
+          the skills required to succeed in their chosen fields.
+        </p>
+
+        <p>
+          As part of the Right Steps Inc. family, RSIMT combines
+          academic development with character formation and
+          Christian values, encouraging students to pursue
+          excellence while making a positive impact in their
+          communities.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= MISSION & VISION ================= -->
+
+  <section>
+
+    <div class="section-title">
+
+      <h2>Our Mission & Vision</h2>
+
+      <p>
+        What guides RSIMT in educating and developing students.
+      </p>
+
+    </div>
+
+
+    <div class="mission-container">
+
+      <div class="mission-card">
+
+        <i class="fas fa-bullseye"></i>
+
+        <h3>Our Mission</h3>
+
+        <p>
+          To provide accessible and quality education that develops
+          students academically, professionally, morally, and
+          spiritually while equipping them with practical skills
+          for meaningful contribution to society.
+        </p>
+
+      </div>
+
+
+      <div class="mission-card">
+
+        <i class="fas fa-eye"></i>
+
+        <h3>Our Vision</h3>
+
+        <p>
+          To become a respected centre of learning known for
+          academic excellence, practical education, innovation,
+          character development, and the preparation of students
+          for successful and purposeful lives.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= CORE VALUES ================= -->
+
+  <section class="values">
+
+    <div class="section-title">
+
+      <h2>Our Core Values</h2>
+
+      <p>
+        The principles that shape the RSIMT community.
+      </p>
+
+    </div>
+
+
+    <div class="values-container">
+
+      <div class="value-card">
+
+        <i class="fas fa-graduation-cap"></i>
+
+        <h3>Excellence</h3>
+
+        <p>
+          We encourage students and staff to pursue excellence
+          in learning, teaching, and service.
+        </p>
+
+      </div>
+
+
+      <div class="value-card">
+
+        <i class="fas fa-handshake"></i>
+
+        <h3>Integrity</h3>
+
+        <p>
+          We promote honesty, responsibility, discipline,
+          and accountability.
+        </p>
+
+      </div>
+
+
+      <div class="value-card">
+
+        <i class="fas fa-lightbulb"></i>
+
+        <h3>Innovation</h3>
+
+        <p>
+          We encourage creativity, critical thinking,
+          technology, and practical problem-solving.
+        </p>
+
+      </div>
+
+
+      <div class="value-card">
+
+        <i class="fas fa-heart"></i>
+
+        <h3>Service</h3>
+
+        <p>
+          We encourage students to use their knowledge and
+          skills to positively impact their communities.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= AREAS OF LEARNING ================= -->
+
+  <section>
+
+    <div class="section-title">
+
+      <h2>What RSIMT Offers</h2>
+
+      <p>
+        Education designed to prepare students for the future.
+      </p>
+
+    </div>
+
+
+    <div class="programs-container">
+
+      <div class="program-card">
+
+        <i class="fas fa-book-open"></i>
+
+        <h3>Academic Education</h3>
+
+        <p>
+          Students receive structured academic education designed
+          to build knowledge and understanding in their chosen
+          areas of study.
+        </p>
+
+      </div>
+
+
+      <div class="program-card">
+
+        <i class="fas fa-laptop-code"></i>
+
+        <h3>Practical Skills</h3>
+
+        <p>
+          RSIMT emphasizes practical learning and skills that can
+          help students become more capable and prepared for
+          real-world opportunities.
+        </p>
+
+      </div>
+
+
+      <div class="program-card">
+
+        <i class="fas fa-users"></i>
+
+        <h3>Character Development</h3>
+
+        <p>
+          Students are encouraged to develop discipline,
+          leadership, responsibility, good character, and
+          a spirit of service.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= CTA ================= -->
+
+  <section class="cta">
+
+    <h2>Take the Right Step Towards Your Future</h2>
+
+    <p>
+      Discover an educational environment where knowledge,
+      practical skills, character, and purpose come together.
+    </p>
+
+    
+
+  </section>
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer>
+
+    <p>
+      &copy; 2026 Right Steps Institute of Management and Technology
+      (RSIMT). All Rights Reserved.
+    </p>
+
+
+
+  </footer>
+
+</body>
+</html>

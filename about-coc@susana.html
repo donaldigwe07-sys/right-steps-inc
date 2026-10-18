@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Church of Christ @ Susana Homes | Right Steps Inc.</title>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* GENERAL STYLING */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* NAVIGATION BAR */
+        .navbar {
+            background-color: #0d1b2a;
+            color: white;
+            padding: 18px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            color: #d4a373;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .logo i {
+            margin-right: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: white;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #d4a373;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            min-height: 550px;
+
+            background:
+                linear-gradient(
+                    rgba(7, 20, 35, 0.75),
+                    rgba(7, 20, 35, 0.82)
+                ),
+                url("images/WhatsApp Image 2026-10-09 at 2.36.19 PM.jpeg");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+            color: white;
+            padding: 80px 20px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .hero-icon {
+            font-size: 55px;
+            color: #d4a373;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 5vw, 54px);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #d4a373;
+        }
+
+        .hero-subtitle {
+            font-size: 22px;
+            margin-bottom: 18px;
+            color: #f4d6b0;
+            font-style: italic;
+        }
+
+        .hero p {
+            font-size: 17px;
+            max-width: 720px;
+            margin: 0 auto 28px;
+        }
+
+        /* BUTTONS */
+        .btn {
+            display: inline-block;
+            background-color: #d4a373;
+            color: #0d1b2a;
+            padding: 13px 25px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin: 6px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: white;
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: white;
+            border: 2px solid #d4a373;
+        }
+
+        .btn-outline:hover {
+            color: #0d1b2a;
+        }
+
+        /* GENERAL SECTION STYLING */
+        section {
+            padding: 75px 0;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-heading h2 {
+            font-size: 32px;
+            color: #0d1b2a;
+            margin-bottom: 10px;
+        }
+
+        .section-heading p {
+            max-width: 750px;
+            margin: auto;
+            color: #666;
+        }
+
+        .heading-line {
+            width: 70px;
+            height: 4px;
+            background-color: #d4a373;
+            margin: 15px auto;
+            border-radius: 5px;
+        }
+
+        /* ABOUT THE CHURCH */
+        .about-section {
+            background-color: white;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 45px;
+            align-items: center;
+        }
+
+        .about-image {
+            min-height: 380px;
+
+            background:
+                url("https://images.unsplash.com/photo-1438032005730-c779502df39b?auto=format&fit=crop&w=1000&q=85")
+                center/cover;
+
+            border-radius: 10px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .about-text h2 {
+            font-size: 30px;
+            color: #0d1b2a;
+            margin-bottom: 15px;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+        }
+
+        .about-text h3 {
+            color: #a66a35;
+            margin: 20px 0 8px;
+        }
+
+        /* MISSION AND VISION */
+        .mission-section {
+            background-color: #eef1f4;
+        }
+
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .mission-card {
+            background-color: white;
+            padding: 35px;
+            text-align: center;
+            border-radius: 10px;
+            border-bottom: 4px solid #d4a373;
+            transition: 0.3s;
+        }
+
+        .mission-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .mission-card i {
+            color: #b57b45;
+            font-size: 40px;
+            margin-bottom: 18px;
+        }
+
+        .mission-card h3 {
+            color: #0d1b2a;
+            margin-bottom: 12px;
+        }
+
+        /* CHURCH ACTIVITIES */
+        .activities-section {
+            background-color: white;
+        }
+
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .activity-card {
+            background-color: #f8f9fa;
+            text-align: center;
+            padding: 30px 25px;
+            border-radius: 10px;
+            border: 1px solid #e5e5e5;
+            transition: 0.3s;
+        }
+
+        .activity-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border-color: #d4a373;
+        }
+
+        .activity-card i {
+            color: #b57b45;
+            font-size: 38px;
+            margin-bottom: 18px;
+        }
+
+        .activity-card h3 {
+            color: #0d1b2a;
+            margin-bottom: 12px;
+            font-size: 20px;
+        }
+
+        /* SCRIPTURE SECTION */
+        .scripture-section {
+            background-color: #0d1b2a;
+            color: white;
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+        .scripture-section i {
+            font-size: 42px;
+            color: #d4a373;
+            margin-bottom: 20px;
+        }
+
+        .scripture-section blockquote {
+            font-size: 25px;
+            font-style: italic;
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .scripture-section p {
+            color: #d4a373;
+            font-weight: bold;
+            margin-top: 18px;
+        }
+
+        /* WELCOME SECTION */
+        .welcome-section {
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+
+        .welcome-box {
+            background-color: white;
+            padding: 45px 30px;
+            border-radius: 12px;
+            border-top: 4px solid #d4a373;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .welcome-box h2 {
+            font-size: 30px;
+            color: #0d1b2a;
+            margin-bottom: 15px;
+        }
+
+        .welcome-box p {
+            max-width: 750px;
+            margin: 0 auto 20px;
+        }
+
+        /* CONTACT SECTION */
+        .contact-section {
+            background-color: white;
+            text-align: center;
+        }
+
+        .contact-box {
+            background-color: #0d1b2a;
+            color: white;
+            padding: 45px 25px;
+            border-radius: 12px;
+        }
+
+        .contact-box h2 {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .contact-box p {
+            max-width: 700px;
+            margin: 0 auto 20px;
+        }
+
+        .contact-details {
+            margin: 20px 0;
+        }
+
+        .contact-details p {
+            margin-bottom: 12px;
+        }
+
+        .contact-details i {
+            color: #d4a373;
+            margin-right: 8px;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #07111d;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+        }
+
+        footer p {
+            font-size: 14px;
+            margin: 6px 0;
+        }
+
+        footer .footer-message {
+            color: #d4a373;
+            font-style: italic;
+        }
+
+        .back-to-top {
+            display: inline-block;
+            color: #d4a373;
+            margin-top: 12px;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 850px) {
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                min-height: 300px;
+            }
+
+            .activities-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .nav-content {
+                justify-content: center;
+            }
+
+            .nav-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .hero {
+                min-height: 480px;
+            }
+
+            .hero-subtitle {
+                font-size: 19px;
+            }
+
+            .mission-grid,
+            .activities-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-heading h2 {
+                font-size: 27px;
+            }
+
+            .nav-links {
+                gap: 12px;
+            }
+
+            .nav-links a {
+                font-size: 13px;
+            }
+
+            section {
+                padding: 55px 0;
+            }
+
+            .welcome-box {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <header class="navbar" id="top">
+
+        <div class="container nav-content">
+
+            <a href="church-of-christ.html" class="logo">
+                <i class="fa-solid fa-church"></i>
+                Church of Christ @ Susana Homes
+            </a>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#mission">Our Mission</a></li>
+                    <li><a href="#activities">Activities</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="hero-icon">
+                <i class="fa-solid fa-church"></i>
+            </div>
+
+            <h1>
+                Church of Christ<br>
+                <span>@ Susana Homes</span>
+            </h1>
+
+            <div class="hero-subtitle">
+                Growing in Faith. Living in Christ. Serving Others.
+            </div>
+
+            <p>
+                Welcome to the Church of Christ @ Susana Homes,
+                a place to learn God's Word, grow spiritually,
+                worship together, and build a life centred on
+                the teachings of Jesus Christ.
+            </p>
+
+            <a href="#about" class="btn">
+                Discover Our Church
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <a href="#contact" class="btn btn-outline">
+                Get in Touch
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT SECTION -->
+    <section class="about-section" id="about">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <h2>About Our Church</h2>
+
+                <div class="heading-line"></div>
+
+                <p>
+                    A Christian community committed to worship,
+                    biblical teaching, spiritual growth, and service.
+                </p>
+
+            </div>
+
+
+        
+<div class="about-grid">
+    <div class="about-image">
+        <img
+            src="images/WhatsApp Image 2026-10-09 at 2.36.19 PM.jpeg"
+            alt="Church of Christ at Susana Homes"
+        >
+    </div>
+
+    <div class="about-text">
+        <h2>Welcome to Our Church Family</h2>
+
+        <p>
+            The Church of Christ @ Susana Homes is a
+            Christian congregation committed to the
+            worship of God and the teaching of the
+            Word of God.
+        </p>
+
+        <p>
+            Our desire is to encourage people to know
+            Jesus Christ, grow in their understanding
+            of Scripture, develop godly character,
+            and demonstrate Christian love in their
+            daily lives.
+        </p>
+
+        <p>
+            We believe that the church should be a place
+            where people can learn, pray, fellowship,
+            encourage one another, and serve God together.
+        </p>
+
+        <h3>
+            <i class="fa-solid fa-heart"></i>
+            Our Commitment
+        </h3>
+
+        <p>
+            We are committed to biblical teaching,
+            sincere worship, Christian fellowship,
+            prayer, and practical service to others.
+        </p>
+    </div>
+</div>
+
+
+
+
+    </section>
+
+
+    <!-- MISSION AND VISION -->
+    <section class="mission-section" id="mission">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <h2>Our Mission & Vision</h2>
+
+                <div class="heading-line"></div>
+
+                <p>
+                    Seeking to honour God and encourage Christ-centred
+                    living through faith, fellowship, and service.
+                </p>
+
+            </div>
+
+
+            <div class="mission-grid">
+
+                <div class="mission-card">
+
+                    <i class="fa-solid fa-bullseye"></i>
+
+                    <h3>Our Mission</h3>
+
+                    <p>
+                        To encourage people to understand and follow
+                        the teachings of Jesus Christ, grow in the
+                        knowledge of God's Word, worship God faithfully,
+                        and serve others with love and compassion.
+                    </p>
+
+                </div>
+
+
+                <div class="mission-card">
+
+                    <i class="fa-solid fa-eye"></i>
+
+                    <h3>Our Vision</h3>
+
+                    <p>
+                        To be a Christ-centred congregation where
+                        people grow spiritually, strengthen one
+                        another in faith, and become positive
+                        influences in their families and communities.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CHURCH ACTIVITIES -->
+    <section class="activities-section" id="activities">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <h2>Our Church Activities</h2>
+
+                <div class="heading-line"></div>
+
+                <p>
+                    Opportunities for worship, learning, fellowship,
+                    prayer, and Christian service.
+                </p>
+
+            </div>
+
+
+            <div class="activities-grid">
+
+                <div class="activity-card">
+
+                    <i class="fa-solid fa-book-bible"></i>
+
+                    <h3>Biblical Teaching</h3>
+
+                    <p>
+                        Learning from the Bible and applying its
+                        teachings to our everyday lives.
+                    </p>
+
+                </div>
+
+
+                <div class="activity-card">
+
+                    <i class="fa-solid fa-hands-praying"></i>
+
+                    <h3>Prayer & Worship</h3>
+
+                    <p>
+                        Coming together to pray, worship God,
+                        and strengthen our faith in Him.
+                    </p>
+
+                </div>
+
+
+                <div class="activity-card">
+
+                    <i class="fa-solid fa-people-group"></i>
+
+                    <h3>Christian Fellowship</h3>
+
+                    <p>
+                        Building meaningful relationships and
+                        encouraging one another in Christian living.
+                    </p>
+
+                </div>
+
+
+                <div class="activity-card">
+
+                    <i class="fa-solid fa-heart"></i>
+
+                    <h3>Care & Compassion</h3>
+
+                    <p>
+                        Demonstrating Christian love through
+                        kindness, encouragement, and care for others.
+                    </p>
+
+                </div>
+
+
+                <div class="activity-card">
+
+                    <i class="fa-solid fa-music"></i>
+
+                    <h3>Praise & Thanksgiving</h3>
+
+                    <p>
+                        Giving thanks to God and celebrating His
+                        goodness through praise and worship.
+                    </p>
+
+                </div>
+
+
+                <div class="activity-card">
+
+                    <i class="fa-solid fa-hands-holding-child"></i>
+
+                    <h3>Spiritual Growth</h3>
+
+                    <p>
+                        Encouraging individuals and families to
+                        develop faith, godly character, and
+                        Christ-centred values.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- BIBLE VERSE -->
+    <section class="scripture-section">
+
+        <div class="container">
+
+            <i class="fa-solid fa-book-open"></i>
+
+            <blockquote>
+                "For where two or three are gathered together
+                in my name, there am I in the midst of them."
+            </blockquote>
+
+            <p>Matthew 18:20 (KJV)</p>
+
+        </div>
+
+    </section>
+
+
+    <!-- WELCOME SECTION -->
+    <section class="welcome-section">
+
+        <div class="container">
+
+            <div class="welcome-box">
+
+                <h2>You Are Welcome Here!</h2>
+
+                <p>
+                    Whether you are looking for a church community,
+                    seeking to understand the Bible better, or
+                    wishing to grow in your relationship with God,
+                    we welcome your enquiry.
+                </p>
+
+                <p>
+                    We look forward to connecting with you and
+                    sharing in the journey of faith.
+                </p>
+
+                <a href="#contact" class="btn">
+                    Contact Our Church
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-section" id="contact">
+
+        <div class="container">
+
+            <div class="contact-box">
+
+                <h2>Get in Touch With Us</h2>
+
+                <p>
+                    Would you like to visit the church or learn more
+                    about our worship gatherings and activities?
+                    We would be happy to hear from you.
+                </p>
+
+
+                <div class="contact-details">
+
+                    <p>
+                        <i class="fa-solid fa-church"></i>
+                        Church of Christ @ Susana Homes
+                    </p>
+
+                    <p>
+                        <i class="fa-solid fa-phone"></i>
+                        Phone: 09000000000
+                    </p>
+
+                    <p>
+                        <i class="fa-brands fa-whatsapp"></i>
+                        WhatsApp: 08000000000
+                    </p>
+
+                    <p>
+                        <i class="fa-solid fa-envelope"></i>
+                        Email: cocoffiial33sh@gamil.com
+                    </p>
+
+                    <p>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Address: Umuahala, Obuzor, Ukwa West L.G.A, Abia State
+                    </p>
+
+                </div>
+
+
+                
+
+                <a href="index.html" class="btn btn-outline">
+
+                    <i class="fa-solid fa-house"></i>
+                    Return to Right Steps Inc.
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="container">
+
+            <p>
+                &copy; <span id="year"></span>
+                Church of Christ @ Susana Homes.
+                All Rights Reserved.
+            </p>
+
+            <p class="footer-message">
+                Growing in Faith. Living in Christ. Serving Others.
+            </p>
+
+            <p>
+                Part of the Right Steps Inc. family.
+            </p>
+
+    
+
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Automatically display the current year
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+    </script>
+
+</body>
+
+</html>
+```

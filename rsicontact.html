@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact Right Steps Inc.</title>
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+    /* GENERAL STYLING */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f8f9fa;
+        color: #333;
+        line-height: 1.6;
+    }
+
+    :root {
+        --navy: #0d1b2a;
+        --gold: #d4a373;
+        --light: #f8f9fa;
+        --white: #ffffff;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    /* NAVIGATION BAR */
+    nav {
+        background: var(--navy);
+        color: var(--white);
+        padding: 15px 7%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 15px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .logo {
+        color: var(--gold);
+        font-size: 23px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .logo i {
+        font-size: 27px;
+    }
+
+    nav ul {
+        display: flex;
+        list-style: none;
+        gap: 22px;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    nav ul a {
+        color: var(--white);
+        font-size: 14px;
+        transition: 0.3s;
+    }
+
+    nav ul a:hover,
+    nav ul a.active {
+        color: var(--gold);
+    }
+
+    /* HERO SECTION */
+    .hero {
+        min-height: 320px;
+        background:
+            linear-gradient(rgba(13, 27, 42, 0.88),
+                            rgba(13, 27, 42, 0.88));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 60px 20px;
+    }
+
+    .hero-content {
+        max-width: 800px;
+    }
+
+    .hero-content .icon {
+        color: var(--gold);
+        font-size: 48px;
+        margin-bottom: 15px;
+    }
+
+    .hero h1 {
+        color: var(--white);
+        font-size: clamp(32px, 5vw, 48px);
+        margin-bottom: 15px;
+    }
+
+    .hero h1 span {
+        color: var(--gold);
+    }
+
+    .hero p {
+        color: #eeeeee;
+        font-size: 17px;
+        max-width: 650px;
+        margin: auto;
+    }
+
+    /* MAIN CONTENT */
+    .container {
+        width: 86%;
+        max-width: 1150px;
+        margin: 60px auto;
+    }
+
+    .section-heading {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .section-heading h2 {
+        color: var(--navy);
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+
+    .section-heading h2 span {
+        color: var(--gold);
+    }
+
+    .section-heading p {
+        color: #666;
+        font-size: 15px;
+    }
+
+    /* CONTACT CARDS */
+    .contact-info {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+        margin-bottom: 55px;
+    }
+
+    .info-card {
+        background: var(--white);
+        padding: 30px 20px;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+        border-bottom: 4px solid var(--gold);
+        transition: transform 0.3s, background 0.3s;
+    }
+
+    .info-card:hover {
+        transform: translateY(-8px);
+        background: var(--navy);
+        color: var(--white);
+    }
+
+    .info-card .icon-box {
+        width: 65px;
+        height: 65px;
+        margin: 0 auto 18px;
+        background: var(--gold);
+        color: var(--navy);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 25px;
+    }
+
+    .info-card h3 {
+        font-size: 19px;
+        margin-bottom: 10px;
+        color: var(--navy);
+    }
+
+    .info-card:hover h3 {
+        color: var(--gold);
+    }
+
+    .info-card p {
+        font-size: 14px;
+        overflow-wrap: anywhere;
+    }
+
+    .info-card a {
+        color: inherit;
+    }
+
+    .info-card a:hover {
+        color: var(--gold);
+    }
+
+    /* CONTACT FORM LAYOUT */
+    .contact-layout {
+        display: grid;
+        grid-template-columns: 1fr 1.3fr;
+        gap: 35px;
+        align-items: stretch;
+    }
+
+    .contact-message {
+        background: var(--navy);
+        color: var(--white);
+        padding: 40px 30px;
+        border-radius: 15px;
+    }
+
+    .contact-message h2 {
+        color: var(--gold);
+        font-size: 27px;
+        margin-bottom: 18px;
+    }
+
+    .contact-message p {
+        color: #eeeeee;
+        margin-bottom: 20px;
+    }
+
+    .contact-message ul {
+        list-style: none;
+        margin-top: 25px;
+    }
+
+    .contact-message li {
+        margin-bottom: 18px;
+    }
+
+    .contact-message li i {
+        color: var(--gold);
+        margin-right: 10px;
+    }
+
+    .contact-form {
+        background: var(--white);
+        padding: 35px;
+        border-radius: 15px;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.07);
+    }
+
+    .contact-form h2 {
+        color: var(--navy);
+        margin-bottom: 8px;
+        font-size: 26px;
+    }
+
+    .contact-form .form-intro {
+        color: #666;
+        font-size: 14px;
+        margin-bottom: 25px;
+    }
+
+    .form-group {
+        margin-bottom: 18px;
+    }
+
+    .form-group label {
+        display: block;
+        color: var(--navy);
+        font-weight: bold;
+        margin-bottom: 7px;
+        font-size: 14px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        padding: 13px 14px;
+        border: 1px solid #ddd;
+        border-radius: 7px;
+        outline: none;
+        font-family: inherit;
+        font-size: 14px;
+        background: #fcfcfc;
+        transition: border 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+        border-color: var(--gold);
+    }
+
+    .form-group textarea {
+        resize: vertical;
+        min-height: 140px;
+    }
+
+    .btn-submit {
+        width: 100%;
+        border: none;
+        background: var(--gold);
+        color: var(--navy);
+        padding: 15px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 7px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .btn-submit:hover {
+        background: var(--navy);
+        color: var(--white);
+    }
+
+    /* MINISTRIES SECTION */
+    .ministries {
+        background: #ffffff;
+        padding: 50px 20px;
+        text-align: center;
+    }
+
+    .ministries h2 {
+        color: var(--navy);
+        font-size: 29px;
+        margin-bottom: 12px;
+    }
+
+    .ministries h2 span {
+        color: var(--gold);
+    }
+
+    .ministries p {
+        color: #666;
+        margin-bottom: 25px;
+    }
+
+    .ministry-links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .ministry-links a {
+        background: var(--navy);
+        color: var(--white);
+        padding: 11px 18px;
+        border-radius: 25px;
+        font-size: 13px;
+        transition: 0.3s;
+    }
+
+    .ministry-links a:hover {
+        background: var(--gold);
+        color: var(--navy);
+    }
+
+    /* FOOTER */
+    footer {
+        background: var(--navy);
+        color: var(--white);
+        padding: 30px 7%;
+        text-align: center;
+    }
+
+    footer .footer-logo {
+        color: var(--gold);
+        font-size: 23px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    footer p {
+        font-size: 13px;
+        color: #dddddd;
+    }
+
+    footer .footer-links {
+        margin: 15px 0;
+    }
+
+    footer .footer-links a {
+        color: var(--white);
+        margin: 0 10px;
+        font-size: 13px;
+    }
+
+    footer .footer-links a:hover {
+        color: var(--gold);
+    }
+
+    footer .copyright {
+        margin-top: 18px;
+        border-top: 1px solid #344454;
+        padding-top: 18px;
+    }
+
+    /* MOBILE RESPONSIVENESS */
+    @media (max-width: 850px) {
+        nav {
+            justify-content: center;
+        }
+
+        nav ul {
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .contact-info {
+            grid-template-columns: 1fr;
+        }
+
+        .contact-layout {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 500px) {
+        nav ul {
+            gap: 12px;
+        }
+
+        nav ul a {
+            font-size: 12px;
+        }
+
+        .container {
+            width: 92%;
+            margin: 40px auto;
+        }
+
+        .contact-form,
+        .contact-message {
+            padding: 25px 20px;
+        }
+
+        .section-heading h2 {
+            font-size: 27px;
+        }
+    }
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVIGATION BAR -->
+<nav>
+    <a href="index.html" class="logo">
+        <i class="fa-solid fa-book-bible"></i>
+        <span>RIGHT STEPS INC.</span>
+    </a>
+
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="index.html#ministries">Our Ministries</a></li>
+        <li><a href="about-rsimt.html">RSIMT</a></li>
+        <li><a href="index.html#gallery">Gallery</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- HERO SECTION -->
+<header class="hero">
+    <div class="hero-content">
+        <div class="icon">
+            <i class="fa-solid fa-headset"></i>
+        </div>
+
+        <h1>Contact <span>Right Steps</span></h1>
+
+        <p>
+            We would love to hear from you. Whether you have a question,
+            need information about our ministries, or wish to partner with us,
+            we are always happy to connect with you.
+        </p>
+    </div>
+</header>
+
+<!-- MAIN CONTACT CONTENT -->
+<main>
+    <section class="container">
+
+        <div class="section-heading">
+            <h2>Get In <span>Touch</span></h2>
+            <p>
+                Reach out to Right Steps Inc. using any of the contact
+                options below.
+            </p>
+        </div>
+
+        <!-- CONTACT INFORMATION CARDS -->
+        <div class="contact-info">
+
+            <div class="info-card">
+                <div class="icon-box">
+                    <i class="fa-solid fa-phone"></i>
+                </div>
+
+                <h3>Call Us</h3>
+
+                <p>
+                    Speak with our team for enquiries and assistance.
+                </p>
+
+                <p style="margin-top: 10px;">
+                    <strong>Phone:</strong> 090-000-0000
+                </p>
+            </div>
+
+            <div class="info-card">
+                <div class="icon-box">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+
+                <h3>Email Us</h3>
+
+                <p>
+                    Send us your questions, suggestions, or enquiries.
+                </p>
+
+                <p style="margin-top: 10px;">
+                    <strong>Email:</strong> rightstepsofficial@gmail.com
+                </p>
+            </div>
+
+            <div class="info-card">
+                <div class="icon-box">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+
+                <h3>Visit Us</h3>
+
+                <p>
+                    We welcome visitors who wish to learn more about
+                    our organisation and its activities.
+                </p>
+
+                <p style="margin-top: 10px;">
+                    <strong>Address:</strong> Umuahala, Obuzor, Ukwa West, Abia State, Nigeria
+                </p>
+            </div>
+
+        </div>
+
+        <!-- CONTACT FORM AND MESSAGE -->
+        <div class="contact-layout">
+
+            <div class="contact-message">
+                <h2>Let's Connect!</h2>
+
+                <p>
+                    At Right Steps Inc., we believe in education,
+                    Christian values, community development, and
+                    creating opportunities that make a difference.
+                </p>
+
+                <p>
+                    We welcome enquiries from parents, students,
+                    prospective students, partners, supporters, and
+                    everyone interested in our work.
+                </p>
+
+                <ul>
+                    <li>
+                        <i class="fa-solid fa-check-circle"></i>
+                        General enquiries
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check-circle"></i>
+                        School and admission information
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check-circle"></i>
+                        Ministry and church enquiries
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check-circle"></i>
+                        Partnerships and support
+                    </li>
+                </ul>
+            </div>
+
+            <div class="contact-form">
+                <h2>Send Us a Message</h2>
+
+                <p class="form-intro">
+                    Please complete the form below to contact us.
+                </p>
+
+                <form action="mailto:YOUR_EMAIL@example.com"
+                      method="post"
+                      enctype="text/plain">
+
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+
+                        <input type="text"
+                               id="name"
+                               name="Full Name"
+                               placeholder="Enter your full name"
+                               required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+
+                        <input type="email"
+                               id="email"
+                               name="Email"
+                               placeholder="Enter your email address"
+                               required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+
+                        <input type="tel"
+                               id="phone"
+                               name="Phone Number"
+                               placeholder="Enter your phone number">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+
+                        <select id="subject" name="Subject" required>
+                            <option value="">Select an enquiry type</option>
+                            <option value="General Enquiry">General Enquiry</option>
+                            <option value="School Admission">School Admission</option>
+                            <option value="RSIMT">RSIMT</option>
+                            <option value="JSB Institute">JSB Institute</option>
+                            <option value="Church of Christ">Church of Christ @ Susana Homes</option>
+                            <option value="Susana Homes">Susana Homes</option>
+                            <option value="Partnership">Partnership and Support</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+
+                        <textarea id="message"
+                                  name="Message"
+                                  placeholder="Write your message here..."
+                                  required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        Send Message
+                    </button>
+
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- OUR MINISTRIES -->
+    <section class="ministries">
+        <h2>Connect With Our <span>Ministries</span></h2>
+
+        <p>
+            Learn more about the different arms of Right Steps Inc.
+        </p>
+
+        <div class="ministry-links">
+            <a href="about-rscs.html">Right Steps Christian Schools</a>
+
+            <a href="about-rsimt.html">RSIMT</a>
+
+            <a href="jsb-institute.html">JSB Institute</a>
+
+            <a href="church-of-christ.html">Church of Christ</a>
+
+            <a href="susana-homes.html">Susana Homes</a>
+        </div>
+    </section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-logo">
+        <i class="fa-solid fa-book-bible"></i>
+        RIGHT STEPS INC.
+    </div>
+
+    <p>
+        Building lives through education, faith, and service.
+    </p>
+
+    <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="index.html#ministries">Our Ministries</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <p class="copyright">
+        &copy; 2026 Right Steps Inc. All Rights Reserved.
+    </p>
+</footer>
+
+
+</body>
+</html>

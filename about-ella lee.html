@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>Ella Lee Farms | Right Steps Inc.</title>
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+    /* GENERAL STYLING */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 85px;
+    }
+
+    body {
+        background: #f8faf5;
+        color: #26352a;
+        line-height: 1.7;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    img {
+        max-width: 100%;
+        display: block;
+    }
+
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .section {
+        padding: 80px 0;
+    }
+
+    .section-heading {
+        text-align: center;
+        margin-bottom: 45px;
+    }
+
+    .section-heading h2 {
+        color: #174d2b;
+        font-size: 2.3rem;
+        margin-bottom: 12px;
+    }
+
+    .section-heading p {
+        max-width: 720px;
+        margin: auto;
+        color: #647064;
+    }
+
+    .section-tag {
+        color: #c18b2c;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 0.85rem;
+    }
+
+    /* NAVIGATION BAR */
+    .navbar {
+        background: #123c25;
+        color: white;
+        padding: 15px 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .nav-container {
+        width: 90%;
+        max-width: 1250px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 1.15rem;
+        font-weight: 800;
+    }
+
+    .logo-icon {
+        background: #d4a373;
+        color: #123c25;
+        width: 45px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        font-size: 1.4rem;
+    }
+
+    .logo small {
+        display: block;
+        color: #d4a373;
+        font-size: 0.7rem;
+        letter-spacing: 1px;
+    }
+
+    .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+        list-style: none;
+    }
+
+    .nav-links a {
+        font-size: 0.95rem;
+        transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+        color: #e5bd72;
+    }
+
+    .nav-contact {
+        background: #d4a373;
+        color: #123c25 !important;
+        padding: 10px 17px;
+        border-radius: 5px;
+        font-weight: 700;
+    }
+
+    .nav-contact:hover {
+        background: white;
+    }
+
+    /* HERO SECTION */
+    .hero {
+        min-height: 590px;
+        display: flex;
+        align-items: center;
+        position: relative;
+        color: white;
+        background:
+            linear-gradient(90deg,
+            rgba(8, 37, 19, 0.92),
+            rgba(8, 37, 19, 0.60)),
+            url('images/ella-lee-farm.jpg') center/cover no-repeat;
+    }
+
+    .hero-content {
+        max-width: 760px;
+        padding: 90px 0;
+    }
+
+    .hero-label {
+        display: inline-block;
+        background: rgba(212, 163, 115, 0.18);
+        color: #f3d49c;
+        border: 1px solid rgba(243, 212, 156, 0.6);
+        padding: 7px 15px;
+        border-radius: 30px;
+        margin-bottom: 22px;
+        font-size: 0.9rem;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.5rem, 6vw, 4.7rem);
+        line-height: 1.15;
+        margin-bottom: 22px;
+    }
+
+    .hero h1 span {
+        color: #e7bd6d;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+        max-width: 650px;
+        margin-bottom: 30px;
+        color: #f0f3ec;
+    }
+
+    .hero-buttons {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 13px 24px;
+        border-radius: 5px;
+        font-weight: 700;
+        transition: 0.3s;
+    }
+
+    .btn-primary {
+        background: #d4a373;
+        color: #123c25;
+    }
+
+    .btn-primary:hover {
+        background: white;
+        transform: translateY(-3px);
+    }
+
+    .btn-outline {
+        border: 2px solid white;
+        color: white;
+    }
+
+    .btn-outline:hover {
+        background: white;
+        color: #123c25;
+    }
+
+    /* QUICK FACTS */
+    .facts {
+        background: white;
+        padding: 30px 0;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .facts-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        text-align: center;
+    }
+
+    .fact {
+        padding: 10px;
+    }
+
+    .fact i {
+        font-size: 2rem;
+        color: #47864c;
+        margin-bottom: 10px;
+    }
+
+    .fact h3 {
+        color: #174d2b;
+        font-size: 1.1rem;
+    }
+
+    .fact p {
+        font-size: 0.9rem;
+        color: #687568;
+    }
+
+    /* ABOUT SECTION */
+    .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 55px;
+        align-items: center;
+    }
+
+    .about-image {
+        min-height: 390px;
+        border-radius: 15px;
+        overflow: hidden;
+        background: #e0eadb;
+    }
+
+    .about-image img {
+        width: 100%;
+        height: 100%;
+        min-height: 390px;
+        object-fit: cover;
+        transition: transform 0.5s;
+    }
+
+    .about-image:hover img {
+        transform: scale(1.04);
+    }
+
+    .about-content h2 {
+        font-size: 2.2rem;
+        color: #174d2b;
+        margin: 10px 0 20px;
+        line-height: 1.3;
+    }
+
+    .about-content p {
+        margin-bottom: 17px;
+        color: #586458;
+    }
+
+    .check-list {
+        list-style: none;
+        margin: 20px 0 25px;
+    }
+
+    .check-list li {
+        margin-bottom: 12px;
+    }
+
+    .check-list i {
+        color: #47864c;
+        margin-right: 10px;
+    }
+
+    /* FARMING ACTIVITIES */
+    .activities {
+        background: #edf4e9;
+    }
+
+    .activities-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+
+    .activity-card {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .activity-card:hover {
+        transform: translateY(-7px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+    }
+
+    .activity-card img {
+        width: 100%;
+        height: 230px;
+        object-fit: cover;
+    }
+
+    .activity-content {
+        padding: 25px;
+    }
+
+    .activity-icon {
+        width: 52px;
+        height: 52px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #e5f0df;
+        color: #286b37;
+        border-radius: 50%;
+        font-size: 1.4rem;
+        margin-top: -50px;
+        position: relative;
+        border: 4px solid white;
+    }
+
+    .activity-content h3 {
+        color: #174d2b;
+        margin: 15px 0 10px;
+        font-size: 1.35rem;
+    }
+
+    .activity-content p {
+        color: #687568;
+        font-size: 0.96rem;
+    }
+
+    /* MISSION AND VISION */
+    .mission-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+    }
+
+    .mission-card {
+        padding: 35px;
+        border-radius: 12px;
+        background: white;
+        border-left: 5px solid #d4a373;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .mission-card i {
+        color: #47864c;
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    .mission-card h3 {
+        color: #174d2b;
+        font-size: 1.5rem;
+        margin-bottom: 12px;
+    }
+
+    /* FARM GALLERY */
+    .gallery {
+        background: #f0f5ed;
+    }
+
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+    }
+
+    .gallery-item {
+        height: 260px;
+        border-radius: 10px;
+        overflow: hidden;
+        background: #dce8d7;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s;
+    }
+
+    .gallery-item:hover img {
+        transform: scale(1.08);
+    }
+
+    /* CALL TO ACTION */
+    .cta {
+        background: linear-gradient(120deg, #123c25, #286b37);
+        color: white;
+        text-align: center;
+        padding: 70px 20px;
+    }
+
+    .cta h2 {
+        font-size: 2.3rem;
+        margin-bottom: 15px;
+    }
+
+    .cta p {
+        max-width: 700px;
+        margin: 0 auto 25px;
+        color: #e5eee3;
+    }
+
+    /* CONTACT */
+    .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 35px;
+    }
+
+    .contact-info h3 {
+        color: #174d2b;
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    .contact-info p {
+        margin-bottom: 20px;
+        color: #647064;
+    }
+
+    .contact-item {
+        display: flex;
+        gap: 15px;
+        align-items: flex-start;
+        margin-bottom: 20px;
+    }
+
+    .contact-item i {
+        background: #e5f0df;
+        color: #286b37;
+        min-width: 43px;
+        height: 43px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contact-item h4 {
+        color: #174d2b;
+    }
+
+    .contact-item p {
+        margin: 0;
+    }
+
+    .contact-note {
+        background: #edf4e9;
+        padding: 30px;
+        border-radius: 12px;
+    }
+
+    .contact-note h3 {
+        color: #174d2b;
+        margin-bottom: 12px;
+    }
+
+    .contact-note p {
+        color: #647064;
+        margin-bottom: 20px;
+    }
+
+    /* FOOTER */
+    footer {
+        background: #0b2918;
+        color: #e5eee3;
+        padding: 30px 0;
+        text-align: center;
+    }
+
+    .footer-brand {
+        font-size: 1.4rem;
+        font-weight: 800;
+        margin-bottom: 8px;
+    }
+
+    .footer-brand i {
+        color: #d4a373;
+        margin-right: 8px;
+    }
+
+    footer p {
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+    }
+
+    .footer-links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin: 18px 0;
+    }
+
+    .footer-links a:hover {
+        color: #e7bd6d;
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 900px) {
+        .nav-container {
+            flex-direction: column;
+        }
+
+        .nav-links {
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .about-grid {
+            gap: 30px;
+        }
+
+        .activities-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 650px) {
+        .section {
+            padding: 55px 0;
+        }
+
+        .hero {
+            min-height: 500px;
+        }
+
+        .hero-content {
+            padding: 65px 0;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+        }
+
+        .facts-grid {
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .about-grid,
+        .activities-grid,
+        .mission-grid,
+        .gallery-grid,
+        .contact-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .about-image,
+        .about-image img {
+            min-height: 280px;
+        }
+
+        .section-heading h2,
+        .about-content h2,
+        .cta h2 {
+            font-size: 1.9rem;
+        }
+
+        .gallery-item {
+            height: 240px;
+        }
+
+        .nav-links {
+            gap: 12px;
+        }
+
+        .nav-links a {
+            font-size: 0.85rem;
+        }
+
+        .logo {
+            font-size: 1rem;
+        }
+    }
+</style>
+
+
+</head>
+
+<body>
+
+
+<!-- NAVIGATION -->
+<nav class="navbar">
+    <div class="nav-container">
+
+        <a href="index.html" class="logo">
+            <div class="logo-icon">
+                <i class="fas fa-seedling"></i>
+            </div>
+
+            <div>
+                ELLA LEE FARMS
+                <small>A PART OF RIGHT STEPS INC.</small>
+            </div>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#activities">Our Activities</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact" class="nav-contact">Contact Us</a></li>
+        </ul>
+
+    </div>
+</nav>
+
+
+<!-- HERO SECTION -->
+<header class="hero">
+    <div class="container">
+        <div class="hero-content">
+
+            <span class="hero-label">
+                <i class="fas fa-leaf"></i>
+                Growing Today, Sustaining Tomorrow
+            </span>
+
+            <h1>
+                Welcome to <span>Ella Lee Farms</span>
+            </h1>
+
+            <p>
+                An agricultural arm of Right Steps Inc. dedicated to
+                crop production, animal rearing, and the development
+                of productive and sustainable farming practices.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#about" class="btn btn-primary">
+                    Discover Our Farm
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+
+                <a href="#activities" class="btn btn-outline">
+                    Explore Our Activities
+                </a>
+            </div>
+
+        </div>
+    </div>
+</header>
+
+
+<!-- QUICK FACTS -->
+<section class="facts">
+    <div class="container facts-grid">
+
+        <div class="fact">
+            <i class="fas fa-wheat-awn"></i>
+            <h3>Crop Production</h3>
+            <p>Cultivating crops and agricultural produce.</p>
+        </div>
+
+        <div class="fact">
+            <i class="fas fa-cow"></i>
+            <h3>Animal Rearing</h3>
+            <p>Raising animals through responsible farm practices.</p>
+        </div>
+
+        <div class="fact">
+            <i class="fas fa-earth-africa"></i>
+            <h3>Sustainable Farming</h3>
+            <p>Promoting productive and responsible agriculture.</p>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ABOUT SECTION -->
+<section class="section" id="about">
+    <div class="container about-grid">
+
+        <div class="about-image">
+            <img src="images/ChatGPT Image Oct 13, 2026, 10_09_26 AM.png"
+                 alt="Agricultural activities at Ella Lee Farms">
+        </div>
+
+        <div class="about-content">
+
+            <span class="section-tag">Who We Are</span>
+
+            <h2>About Ella Lee Farms</h2>
+
+            <p>
+                Ella Lee Farms is the agricultural arm of Right Steps Inc.,
+                established to engage in farming, animal rearing, and crop
+                production.
+            </p>
+
+            <p>
+                Our focus is on agriculture as a valuable means of
+                producing food, developing practical farming skills,
+                and contributing to the well-being of our communities.
+            </p>
+
+            <p>
+                Through crop cultivation and livestock management,
+                Ella Lee Farms represents our commitment to agricultural
+                productivity, responsible resource use, and growth.
+            </p>
+
+            <ul class="check-list">
+                <li>
+                    <i class="fas fa-circle-check"></i>
+                    Crop cultivation and agricultural production
+                </li>
+
+                <li>
+                    <i class="fas fa-circle-check"></i>
+                    Livestock and animal rearing
+                </li>
+
+                <li>
+                    <i class="fas fa-circle-check"></i>
+                    Responsible farm management
+                </li>
+
+                <li>
+                    <i class="fas fa-circle-check"></i>
+                    Agricultural development and productivity
+                </li>
+            </ul>
+
+            <a href="#activities" class="btn btn-primary">
+                Learn About Our Work
+            </a>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- FARMING ACTIVITIES -->
+<section class="section activities" id="activities">
+
+    <div class="container">
+
+        <div class="section-heading">
+            <span class="section-tag">What We Do</span>
+
+            <h2>Our Agricultural Activities</h2>
+
+            <p>
+                Our work covers important areas of agriculture,
+                from cultivating crops to raising livestock and
+                maintaining productive farming systems.
+            </p>
+        </div>
+
+        <div class="activities-grid">
+
+            <!-- CROP PRODUCTION -->
+            <article class="activity-card">
+
+                <img src="images/Farm 1.jpeg"
+                     alt="Crops growing on a farm">
+
+                <div class="activity-content">
+
+                    <div class="activity-icon">
+                        <i class="fas fa-wheat-awn"></i>
+                    </div>
+
+                    <h3>Crop Production</h3>
+
+                    <p>
+                        We focus on crop cultivation and agricultural
+                        production, with an emphasis on growing and
+                        harvesting useful farm produce.
+                    </p>
+
+                </div>
+            </article>
+
+
+            <!-- LIVESTOCK -->
+            <article class="activity-card">
+
+                <img src="images/Farm 2.jpeg"
+                     alt="Farm animals being raised">
+
+                <div class="activity-content">
+
+                    <div class="activity-icon">
+                        <i class="fas fa-cow"></i>
+                    </div>
+
+                    <h3>Livestock Farming</h3>
+
+                    <p>
+                        Animal rearing is an important part of our
+                        agricultural activities, supporting responsible
+                        livestock management and animal welfare.
+                    </p>
+
+                </div>
+            </article>
+
+
+            <!-- GENERAL FARMING -->
+            <article class="activity-card">
+
+                <img src="images/Farm 4.jpeg"
+                     alt="Agricultural work on a farm">
+
+                <div class="activity-content">
+
+                    <div class="activity-icon">
+                        <i class="fas fa-tractor"></i>
+                    </div>
+
+                    <h3>Farm Management</h3>
+
+                    <p>
+                        We recognise the importance of proper farm
+                        management, land care, and effective farming
+                        practices in agricultural development.
+                    </p>
+
+                </div>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- MISSION AND VISION -->
+<section class="section">
+    <div class="container">
+
+        <div class="section-heading">
+            <span class="section-tag">Our Direction</span>
+            <h2>Our Mission and Vision</h2>
+
+            <p>
+                Our agricultural work is guided by a commitment to
+                productivity, responsible farming, and community value.
+            </p>
+        </div>
+
+        <div class="mission-grid">
+
+            <div class="mission-card">
+                <i class="fas fa-bullseye"></i>
+
+                <h3>Our Mission</h3>
+
+                <p>
+                    To engage in crop production and animal rearing
+                    through responsible agricultural practices that
+                    support food production, practical knowledge,
+                    and sustainable farm development.
+                </p>
+            </div>
+
+            <div class="mission-card">
+                <i class="fas fa-eye"></i>
+
+                <h3>Our Vision</h3>
+
+                <p>
+                    To develop Ella Lee Farms into a productive and
+                    sustainable agricultural enterprise that contributes
+                    to food availability, agricultural growth, and
+                    community development.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- FARM GALLERY -->
+<section class="section gallery" id="gallery">
+
+    <div class="container">
+
+        <div class="section-heading">
+            <span class="section-tag">Life on the Farm</span>
+
+            <h2>Our Farm Gallery</h2>
+
+            <p>
+                A glimpse into agricultural life, crop cultivation,
+                animal rearing, and farm activities.
+            </p>
+        </div>
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item">
+                <img src="images/Farm 5.jpeg"
+                     alt="Farm crops and green vegetation">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/Farm 6.jpeg"
+                     alt="Livestock on a farm">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/Farm 7.jpeg"
+                     alt="Agricultural activities at a farm">
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- CALL TO ACTION -->
+<section class="cta">
+
+    <div class="container">
+
+        <h2>Agriculture for Growth and Development</h2>
+
+        <p>
+            At Ella Lee Farms, agriculture is an important part of
+            building a productive future. Through crop production
+            and animal rearing, we recognise the value of farming
+            to individuals, families, and communities.
+        </p>
+
+        <a href="#contact" class="btn btn-primary">
+            Get in Touch
+            <i class="fas fa-arrow-right"></i>
+        </a>
+
+    </div>
+</section>
+
+
+<!-- CONTACT SECTION -->
+<section class="section" id="contact">
+
+    <div class="container">
+
+        <div class="section-heading">
+            <span class="section-tag">Contact Us</span>
+
+            <h2>Connect With Ella Lee Farms</h2>
+
+            <p>
+                Would you like to learn more about our agricultural
+                activities? We welcome your enquiries.
+            </p>
+        </div>
+
+        <div class="contact-grid">
+
+            <div class="contact-info">
+
+                <h3>We Would Love to Hear From You</h3>
+
+                <p>
+                    Contact Right Steps Inc. to enquire about
+                    Ella Lee Farms, our agricultural activities,
+                    and opportunities to connect with the institution.
+                </p>
+
+                <div class="contact-item">
+                    <i class="fas fa-building"></i>
+
+                    <div>
+                        <h4>Institution</h4>
+                        <p>Ella Lee Farms</p>
+                        <p>A part of Right Steps Inc.</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fas fa-location-dot"></i>
+
+                    <div>
+                        <h4>Farm Location</h4>
+                        <p>Ukpolor, KM 25 along PH/Aba Expressway, Oyigbo, Rivers State.</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+
+                    <div>
+                        <h4>Email</h4>
+                        <p>ellalee03official@gmail.com</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="contact-note">
+
+                <h3>Interested in Our Agricultural Work?</h3>
+
+                <p>
+                    For enquiries about Ella Lee Farms, farming
+                    activities, or other services, please contact
+                    Right Steps Inc. through its official communication
+                    channels.
+                </p>
+
+                <a href="rsicontact.html" class="btn btn-primary">
+                    Contact Right Steps Inc.
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <div class="container">
+
+        <div class="footer-brand">
+            <i class="fas fa-seedling"></i>
+            Ella Lee Farms
+        </div>
+
+        <p>An Agricultural Arm of Right Steps Inc.</p>
+
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#activities">Our Activities</a>
+            <a href="#gallery">Gallery</a>
+            <a href="rsicontact.html">Contact</a>
+        </div>
+
+        <p>
+            &copy; <span id="current-year"></span>
+            Right Steps Inc. All Rights Reserved.
+        </p>
+
+    </div>
+</footer>
+
+
+<script>
+    document.getElementById("current-year").textContent =
+        new Date().getFullYear();
+</script>
+
+
+</body>
+</html>

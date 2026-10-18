@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RSCS | Right Steps Christian Schools</title>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* GENERAL STYLING */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #0d1b2a;
+            --gold: #d4a373;
+            --light-gold: #f4e3ce;
+            --white: #ffffff;
+            --light: #f8f9fa;
+            --text: #444444;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 85px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--white);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            color: var(--navy);
+            font-size: clamp(28px, 4vw, 38px);
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            max-width: 650px;
+            margin: auto;
+            color: #666;
+        }
+
+        .gold-text {
+            color: var(--gold);
+        }
+
+        /* NAVIGATION BAR */
+        .navbar {
+            background: var(--navy);
+            color: var(--white);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .nav-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--white);
+            min-width: 0;
+        }
+
+        .logo-icon {
+            font-size: 30px;
+            color: var(--gold);
+        }
+
+        .logo h2 {
+            font-size: 19px;
+            line-height: 1.3;
+        }
+
+        .logo small {
+            display: block;
+            color: #dddddd;
+            font-size: 11px;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 23px;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-links .nav-button {
+            background: var(--gold);
+            color: var(--navy);
+            padding: 10px 17px;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+
+        .nav-links .nav-button:hover {
+            background: var(--white);
+            color: var(--navy);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            min-height: 570px;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(13, 27, 42, 0.94),
+                    rgba(13, 27, 42, 0.70),
+                    rgba(13, 27, 42, 0.25)
+                ),
+                url("images/Rscs\ 1.png");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 720px;
+            padding: 90px 0;
+        }
+
+        .hero-label {
+            display: inline-block;
+            background: rgba(212, 163, 115, 0.18);
+            border: 1px solid var(--gold);
+            color: #f5d8b6;
+            padding: 8px 18px;
+            border-radius: 30px;
+            margin-bottom: 22px;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            font-size: clamp(36px, 6vw, 60px);
+            line-height: 1.15;
+            margin-bottom: 22px;
+        }
+
+        .hero p {
+            font-size: 17px;
+            max-width: 620px;
+            margin-bottom: 30px;
+            color: #eeeeee;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 25px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        .btn-primary:hover {
+            background: var(--white);
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--white);
+            color: var(--white);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--navy);
+            transform: translateY(-3px);
+        }
+
+        /* HIGHLIGHT STRIP */
+        .highlights {
+            background: var(--white);
+            padding: 30px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .highlight {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            text-align: left;
+        }
+
+        .highlight i {
+            font-size: 28px;
+            color: var(--gold);
+        }
+
+        .highlight h3 {
+            color: var(--navy);
+            font-size: 15px;
+        }
+
+        .highlight p {
+            font-size: 12px;
+            color: #777;
+        }
+
+        /* ABOUT SECTION */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 55px;
+        }
+
+        .about-image {
+            height: 430px;
+            overflow: hidden;
+            border-radius: 30px;
+            box-shadow: 0 15px 35px rgba(13, 27, 42, 0.15);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-content h2 {
+            font-size: 35px;
+            color: var(--navy);
+            margin-bottom: 20px;
+        }
+
+        .about-content p {
+            margin-bottom: 17px;
+        }
+
+        .about-label {
+            display: inline-block;
+            background: var(--light-gold);
+            color: var(--navy);
+            padding: 7px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        .about-list {
+            list-style: none;
+            margin: 20px 0 25px;
+        }
+
+        .about-list li {
+            margin-bottom: 12px;
+        }
+
+        .about-list i {
+            color: #b7834d;
+            margin-right: 10px;
+        }
+
+        /* WHY CHOOSE US */
+        .why-section {
+            background: var(--light);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 35px 25px;
+            border-radius: 25px;
+            text-align: center;
+            border: 1px solid #eeeeee;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+            transition: 0.35s;
+        }
+
+        .feature-card:hover {
+            background: var(--navy);
+            color: var(--white);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(13, 27, 42, 0.18);
+        }
+
+        .feature-icon {
+            width: 75px;
+            height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            background: var(--light-gold);
+            color: var(--navy);
+            border-radius: 50%;
+            font-size: 30px;
+            transition: 0.35s;
+        }
+
+        .feature-card:hover .feature-icon {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        .feature-card h3 {
+            color: var(--navy);
+            margin-bottom: 12px;
+        }
+
+        .feature-card:hover h3 {
+            color: var(--gold);
+        }
+
+        .feature-card p {
+            font-size: 14px;
+        }
+
+        /* ACADEMICS */
+        .academic-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .academic-card {
+            border-radius: 25px;
+            padding: 35px 25px;
+            border: 1px solid #e8e8e8;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+            transition: 0.35s;
+            background: var(--white);
+        }
+
+        .academic-card:hover {
+            background: var(--navy);
+            color: var(--white);
+            transform: translateY(-7px);
+        }
+
+        .academic-card .number {
+            font-size: 35px;
+            font-weight: bold;
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        .academic-card h3 {
+            color: var(--navy);
+            margin-bottom: 12px;
+        }
+
+        .academic-card:hover h3 {
+            color: var(--gold);
+        }
+
+        .academic-card p {
+            font-size: 14px;
+        }
+
+        /* GALLERY */
+        .gallery-section {
+            background: var(--light);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .gallery-item {
+            height: 280px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 22px;
+            background: #e7e7e7;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 25px 18px 18px;
+            color: var(--white);
+            font-weight: bold;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+        }
+
+        /* ADMISSION CALL TO ACTION */
+        .admission {
+            padding: 75px 0;
+            background: var(--navy);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .admission h2 {
+            font-size: clamp(28px, 4vw, 40px);
+            margin-bottom: 15px;
+        }
+
+        .admission p {
+            max-width: 650px;
+            margin: 0 auto 28px;
+            color: #dddddd;
+        }
+
+        /* CONTACT */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .contact-card {
+            background: var(--light);
+            border-radius: 22px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .contact-card:hover {
+            background: var(--navy);
+            color: var(--white);
+            transform: translateY(-5px);
+        }
+
+        .contact-card i {
+            font-size: 30px;
+            color: #b7834d;
+            margin-bottom: 15px;
+        }
+
+        .contact-card h3 {
+            color: var(--navy);
+            margin-bottom: 10px;
+        }
+
+        .contact-card:hover h3 {
+            color: var(--gold);
+        }
+
+        .contact-card p {
+            font-size: 14px;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-card a {
+            color: inherit;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #08121d;
+            color: #dddddd;
+            padding: 35px 0;
+            text-align: center;
+        }
+
+        .footer-logo {
+            color: var(--gold);
+            font-size: 23px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .footer-links a {
+            color: #dddddd;
+            transition: 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #28323d;
+            padding-top: 20px;
+            font-size: 13px;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 950px) {
+            .nav-content {
+                flex-direction: column;
+            }
+
+            .nav-links {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+
+            .highlight-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-grid {
+                gap: 30px;
+            }
+
+            .features-grid,
+            .academic-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 650px) {
+            .section {
+                padding: 55px 0;
+            }
+
+            .nav-links {
+                gap: 12px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            .hero {
+                min-height: 500px;
+            }
+
+            .hero-content {
+                padding: 65px 0;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .highlight-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 25px 10px;
+            }
+
+            .highlight {
+                justify-content: flex-start;
+            }
+
+            .highlight i {
+                font-size: 23px;
+            }
+
+            .highlight h3 {
+                font-size: 13px;
+            }
+
+            .about-grid,
+            .features-grid,
+            .academic-grid,
+            .gallery-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                height: 300px;
+            }
+
+            .about-content h2 {
+                font-size: 29px;
+            }
+
+            .gallery-item {
+                height: 260px;
+            }
+
+            .hero-buttons .btn {
+                padding: 12px 18px;
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <header class="navbar">
+        <div class="container nav-content">
+
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-graduation-cap logo-icon"></i>
+
+                <div>
+                    <h2>RSCS</h2>
+                    <small>RIGHT STEPS CHRISTIAN SCHOOLS</small>
+                </div>
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="#about">About RSCS</a>
+                <a href="#academics">Academics</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#contact">Contact</a>
+                <a href="#admissions" class="nav-button">Admissions</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+
+            <div class="hero-content">
+
+                <span class="hero-label">
+                    RIGHT STEPS INC. EDUCATIONAL MINISTRY
+                </span>
+
+                <h1>
+                    Building Bright Futures Through
+                    <span class="gold-text">Quality Education</span>
+                </h1>
+
+                <p>
+                    Welcome to Right Steps Christian Schools (RSCS), where
+                    learning, character development, and Christian values
+                    come together to help students grow and prepare for
+                    the future.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#about" class="btn btn-primary">
+                        Discover RSCS
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                    <a href="#admissions" class="btn btn-outline">
+                        Admission Enquiries
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- SCHOOL HIGHLIGHTS -->
+    <section class="highlights">
+        <div class="container highlight-grid">
+
+            <div class="highlight">
+                <i class="fa-solid fa-book-open"></i>
+                <div>
+                    <h3>Quality Learning</h3>
+                    <p>Supporting academic growth</p>
+                </div>
+            </div>
+
+            <div class="highlight">
+                <i class="fa-solid fa-heart"></i>
+                <div>
+                    <h3>Christian Values</h3>
+                    <p>Building good character</p>
+                </div>
+            </div>
+
+            <div class="highlight">
+                <i class="fa-solid fa-people-group"></i>
+                <div>
+                    <h3>Student Development</h3>
+                    <p>Encouraging individual growth</p>
+                </div>
+            </div>
+
+            <div class="highlight">
+                <i class="fa-solid fa-lightbulb"></i>
+                <div>
+                    <h3>Future Ready</h3>
+                    <p>Inspiring lifelong learning</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ABOUT RSCS -->
+    <section class="section" id="about">
+        <div class="container about-grid">
+
+            <div class="about-image">
+                <img src="images/Rscs Picture 7.jpg"
+                     alt="Students and learning activities at Right Steps Christian Schools">
+            </div>
+
+            <div class="about-content">
+
+                <span class="about-label">ABOUT OUR SCHOOL</span>
+
+                <h2>
+                    Welcome to
+                    <span class="gold-text">RSCS</span>
+                </h2>
+
+                <p>
+                    Right Steps Christian Schools (RSCS) is an educational
+                    ministry under Right Steps Inc. committed to providing
+                    education in an environment that values learning,
+                    discipline, personal development, and Christian
+                    principles.
+                </p>
+
+                <p>
+                    We believe that education should prepare students not
+                    only for academic success but also for responsible
+                    living, service to others, and a brighter future.
+                </p>
+
+                <ul class="about-list">
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        Commitment to quality education
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        Emphasis on character and discipline
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        Encouragement of personal growth
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        Education guided by Christian values
+                    </li>
+                </ul>
+
+                <a href="#academics" class="btn btn-primary">
+                    Explore Our Academics
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- WHY CHOOSE RSCS -->
+    <section class="section why-section">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Why Choose <span class="gold-text">RSCS?</span></h2>
+
+                <p>
+                    We aim to nurture students academically, morally,
+                    socially, and spiritually.
+                </p>
+            </div>
+
+            <div class="features-grid">
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+
+                    <h3>Academic Excellence</h3>
+
+                    <p>
+                        Encouraging students to learn, develop their
+                        abilities, and pursue academic progress.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-book-bible"></i>
+                    </div>
+
+                    <h3>Christian Foundation</h3>
+
+                    <p>
+                        Promoting Christian principles, good character,
+                        honesty, respect, and responsible living.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-people-group"></i>
+                    </div>
+
+                    <h3>Personal Development</h3>
+
+                    <p>
+                        Encouraging confidence, creativity, cooperation,
+                        and the development of useful life skills.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-shield-heart"></i>
+                    </div>
+
+                    <h3>Discipline and Respect</h3>
+
+                    <p>
+                        Promoting an environment where respect,
+                        responsibility, and good conduct matter.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+
+                    <h3>Creativity and Innovation</h3>
+
+                    <p>
+                        Inspiring curiosity, independent thinking,
+                        problem-solving, and a love for learning.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-handshake-angle"></i>
+                    </div>
+
+                    <h3>Community and Service</h3>
+
+                    <p>
+                        Encouraging students to care for others and
+                        contribute positively to their communities.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ACADEMIC PROGRAMMES -->
+    <section class="section" id="academics">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Our <span class="gold-text">Academics</span></h2>
+
+                <p>
+                    We are committed to supporting students at every
+                    stage of their educational journey.
+                </p>
+            </div>
+
+            <div class="academic-grid">
+
+                <div class="academic-card">
+                    <div class="number">01</div>
+
+                    <h3>Early Learning</h3>
+
+                    <p>
+                        An opportunity to build foundational knowledge,
+                        develop curiosity, and establish positive
+                        learning habits.
+                    </p>
+                </div>
+
+                <div class="academic-card">
+                    <div class="number">02</div>
+
+                    <h3>Primary Education</h3>
+
+                    <p>
+                        Building essential literacy, numeracy,
+                        communication, and problem-solving skills.
+                    </p>
+                </div>
+
+                <div class="academic-card">
+                    <div class="number">03</div>
+
+                    <h3>Secondary Education</h3>
+
+                    <p>
+                        Developing deeper subject knowledge,
+                        independent thinking, discipline, and
+                        preparation for future opportunities.
+                    </p>
+                </div>
+
+            </div>
+
+            <p style="text-align:center; margin-top:25px; font-size:13px;">
+                Note: Replace these programme descriptions with the
+                actual educational levels offered by your school.
+            </p>
+
+        </div>
+    </section>
+
+
+    <!-- SCHOOL GALLERY -->
+    <section class="section gallery-section" id="gallery">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Life at <span class="gold-text">RSCS</span></h2>
+
+                <p>
+                    Take a glimpse into our learning environment and
+                    the activities that make school life meaningful.
+                </p>
+            </div>
+
+            <div class="gallery-grid">
+
+                <div class="gallery-item">
+                    <img src="images/Rscs Pictures 9.jpeg"
+                         alt="RSCS school building">
+
+                    <div class="gallery-caption">
+                        Our School Environment
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/Rscs Pictures 10.jpeg"
+                         alt="Students participating in classroom learning">
+
+                    <div class="gallery-caption">
+                        Learning and Education
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/Rscs Picture 5.jpg"
+                         alt="School students participating in an activity">
+
+                    <div class="gallery-caption">
+                        Student Activities
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ADMISSIONS -->
+    <section class="admission" id="admissions">
+        <div class="container">
+
+            <h2>Give Your Child a <span class="gold-text">Better Future</span></h2>
+
+            <p>
+                Interested in learning more about Right Steps Christian
+                Schools? Contact us to enquire about available classes,
+                admission requirements, school fees, and the admission
+                process.
+            </p>
+
+            <a href="#contact" class="btn btn-primary">
+                Enquire About Admission
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+    </section>
+
+
+    <!-- CONTACT SECTION -->
+    <section class="section" id="contact">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Contact <span class="gold-text">RSCS</span></h2>
+
+                <p>
+                    We would be happy to hear from you. Reach out to
+                    enquire about our school and educational services.
+                </p>
+            </div>
+
+            <div class="contact-grid">
+
+                <div class="contact-card">
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    <h3>Our Location</h3>
+
+                    <p>
+                        Umuahala, Obuzor, Ukwa West, Abia State, Nigeria
+                    </p>
+                </div>
+
+                <div class="contact-card">
+                    <i class="fa-solid fa-phone"></i>
+
+                    <h3>Phone Number</h3>
+
+                    <p>
+                        <a href="contact.html">
+                            0900-000-0000
+                        </a>
+                    </p>
+                </div>
+
+                <div class="contact-card">
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <h3>Email Address</h3>
+
+                    <p>
+                        <a href="contact.html">
+                            rscsofficial@gmail.com
+                        </a>
+                    </p>
+                </div>
+
+            </div>
+
+            <div style="text-align:center; margin-top:35px;">
+                <a href="rsicontact.html" class="btn btn-primary">
+                    Visit Our Contact Page
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+
+            <div class="footer-logo">
+                <i class="fa-solid fa-graduation-cap"></i>
+                RSCS
+            </div>
+
+            <p>Right Steps Christian Schools</p>
+
+            <p style="font-size:13px; margin-top:5px;">
+                An educational ministry under Right Steps Inc.
+            </p>
+
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="#about">About RSCS</a>
+                <a href="#academics">Academics</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+            <div class="footer-bottom">
+                &copy; <span id="year"></span>
+                Right Steps Inc. All Rights Reserved.
+            </div>
+
+        </div>
+    </footer>
+
+
+    <script>
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+    </script>
+
+</body>
+</html>
+
